@@ -39,7 +39,7 @@ int main(void){
         v=acq*0.00122100122;
         //acq=acq*1000;
         Rt = (1000*v) /(5-v);
-        temp = 8068.9*exp(-9*10^(-5)); //*Rt dentro da exp
+        temp = 8068.9*exp(-9E-5*Rt); //*Rt dentro da exp
         //printf("\nRt=%0.2f",Rt);
         //printf("\nAcq=%0.2f",v);
         printf("\n [%d] Temp=%f(Cº) Rt=%.2f(Ohms) v=%.2f(Volts)",i,temp,Rt,v);
