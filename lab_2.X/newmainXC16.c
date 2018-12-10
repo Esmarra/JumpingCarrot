@@ -44,19 +44,15 @@ int main(void){
     ConfigTMR1();
     
     while(1){
+        //==== (1)- Medir Ruido ADC ====//
+        /*
+        acq=readADC(9); // Lê Val e dá Map para Digital (Canal 9 Pin)
+        printf("\n%d,%u",i,acq); // Prints val count and ADC bytes (CSV)
+        i++;
+        */
+        
+        
         _T1IE = 1;  //Activa interrupção do TIMER1
-        if(cnt==10){ // 10 Timer Counts (10*1s = 10s)
-            acq=readADC(9); // Lê Val e dá Map para Digital (Canal 9 Pin)
-            // Valor Tensão no Ponto --> 5volts/(2^12bits - 1)
-            v=acq*(0.001221001221);
-            // Calc Rt com Divisor de Tensão
-            Rt = (1000*v)/(5-v);
-            //temp = 8068.9*exp(-0.026*Rt);
-            temp = 280.2*exp(-50E-5*Rt);
-            printf("\n\n [%d] ADC=%d(bytes) Temp=%.2f(Cº) Rt=%.2f(Ohms) v=%.2f(Volts)",i,acq,temp,Rt,v);
-            i++;
-            cnt = 0; // Reset Clock Count
-        }
         //__delay_ms(500);
     }
 }
@@ -66,6 +62,18 @@ int main(void){
 //==== Timer Rotine 1s ====//
 void _ISRFAST _T1Interrupt(void) {
     // Timer1 interrupt service routine
+    if(cnt==10){ // 10 Timer Counts (10*1s = 10s)
+        acq=readADC(9); // Lê Val e dá Map para Digital (Canal 9 Pin)
+        // Valor Tensão no Ponto --> 5volts/(2^12bits - 1)
+        v=acq*(0.001221001221);
+        // Calc Rt com Divisor de Tensão
+        Rt = (1000*v)/(5-v);
+        //temp = 8068.9*exp(-0.026*Rt);
+        temp = 280.2*exp(-50E-5*Rt);
+        printf("\n\n [%d] ADC=%d(bytes) Temp=%.2f(Cº) Rt=%.2f(Ohms) v=%.2f(Volts)",i,acq,temp,Rt,v);
+        i++;
+        cnt = 0; // Reset Clock Count
+    }
     cnt++; // Count Number o Interruptions (Secs)
     _T1IF = 0; // Stop Interrupt
 }

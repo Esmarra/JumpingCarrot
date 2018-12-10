@@ -1,2 +1,10 @@
 
 *.xml
+*.xml
+*.hex
+*.elf
+*.o
+*.elf
+*.hex
+*.map
+*.xml
