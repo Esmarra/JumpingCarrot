@@ -1,7 +1,16 @@
 /*=================
+ * By: Miguel Maranha 2012138309
+ * With: Diogo Gomes 
  *Pin Mode:
- *  
- */
+ * +5V(Pin28)
+ *  |
+ *  Resistor(1k)
+ *  |--o Vout(Pin26)
+ *  |
+ *  Termistor
+ *  |
+ *  Gnd
+ * =================*/
 #include <xc.h>
 #include "config.h"
 #include <libpic30.h>
@@ -11,13 +20,19 @@
 //======== Functions Initialize ========//
 inline void ConfigADC(void); // Configures Analog To Digital
 inline void ConfigUART1(unsigned long int brg); // Serial Link Via Uart
-unsigned int readADC(unsigned int ch); // Read ADC values input[PIN]
-void wait10msTMR1(unsigned int ms10); // Wait 10 ms of Time
+inline void ConfigTMR1(void);
 
+unsigned int readADC(unsigned int ch); // Read ADC values input[PIN]
+
+int i;
+unsigned int cnt, acq;
+double v;
+double Rt;
+double temp;
 
 
 int main(void){
-    //configurar oscillador para 32MHz
+    // Configurar oscillador para 32MHz
     CLKDIVbits.DOZE = 0; // 1:1
     CLKDIVbits.RCDIV = 0; // 8 MHz
     //pins digitais
@@ -26,31 +41,36 @@ int main(void){
     TRISB= 0b1111111101111111;
     ConfigUART1(19200);
     ConfigADC();
-    // BAD CODE
-    int i;
-    unsigned int acq;
-    long double v;
-    long double Rt;
-    long double temp;
+    ConfigTMR1();
+    
     while(1){
-        wait10msTMR1(10);
-        acq=readADC(9);     // Adquire canal 9
-        //printf("\n Arroz doce Count [%d]  Val %u mV",i,acq);
-        v=acq*0.00122100122;
-        //acq=acq*1000;
-        Rt = (1000*v) /(5-v);
-        temp = 8068.9*exp(-9E-5*Rt); //*Rt dentro da exp
-        //printf("\nRt=%0.2f",Rt);
-        //printf("\nAcq=%0.2f",v);
-        printf("\n [%d] Temp=%f(Cº) Rt=%.2f(Ohms) v=%.2f(Volts)",i,temp,Rt,v);
-        i++;
+        _T1IE = 1;  //Activa interrupção do TIMER1
+        if(cnt==10){ // 10 Timer Counts (10*1s = 10s)
+            acq=readADC(9); // Lê Val e dá Map para Digital (Canal 9 Pin)
+            // Valor Tensão no Ponto --> 5volts/(2^12bits - 1)
+            v=acq*(0.001221001221);
+            // Calc Rt com Divisor de Tensão
+            Rt = (1000*v)/(5-v);
+            //temp = 8068.9*exp(-0.026*Rt);
+            temp = 280.2*exp(-50E-5*Rt);
+            printf("\n\n [%d] ADC=%d(bytes) Temp=%.2f(Cº) Rt=%.2f(Ohms) v=%.2f(Volts)",i,acq,temp,Rt,v);
+            i++;
+            cnt = 0; // Reset Clock Count
+        }
         //__delay_ms(500);
     }
 }
 
 //======== Functions Code ========//
 
+//==== Timer Rotine 1s ====//
+void _ISRFAST _T1Interrupt(void) {
+    // Timer1 interrupt service routine
+    cnt++; // Count Number o Interruptions (Secs)
+    _T1IF = 0; // Stop Interrupt
+}
 
+//==== Read Value From Pin Convert to Digital 12bits ====//
 unsigned int readADC(unsigned int ch){
     AD1CHS = ch;            // Select analog input channel
     AD1CON1bits.SAMP = 1;   // start sampling, then go to conversion
@@ -59,13 +79,13 @@ unsigned int readADC(unsigned int ch){
     return(ADC1BUF0);       // yes then get ADC value
 }
 
-//==== Timer 10ms ====//
-void wait10msTMR1(unsigned int ms10){
-T1CON = 0x00; // stop TMR1 e faz reset ao registo de controlo
-TMR1 = 1; // inicializa o registo do timer 1
-ms10 *= 625; // 625 timer ticks = 10 ms [Nota:Timer Ticks Diferentes para Cada clock]
-T1CON = 0x8030; // activa TMR1, prescale 1:256, relogio interno
-while(TMR1 < ms10); // espera ms10 unidades de 10ms
+//==== Timer Config 1s ====//
+inline void ConfigTMR1(void){
+    T1CON = 0x8030; // activa TMR1, prescale 1:256, relogio interno
+    TMR1 = 0; // inicializa o registo do timer 1
+    PR1 = 62500 - 1;   // 1.000 ms Tick (625000 not working?)
+    _T1IF = 0;
+    _T1IE = 1; //Activa Interrupts
 }
 
 //==== Serial Link Comms ====//
