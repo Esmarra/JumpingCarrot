@@ -21,11 +21,10 @@
 inline void ConfigADC(void); // Configures Analog To Digital
 inline void ConfigUART1(unsigned long int brg); // Serial Link Via Uart
 inline void ConfigTMR1(void);
-
 unsigned int readADC(unsigned int ch); // Read ADC values input[PIN]
 
 int i;
-unsigned int cnt, acq;
+unsigned int cnt, acq, acq2;
 double v;
 double Rt;
 double temp;
@@ -35,8 +34,8 @@ int main(void){
     // Configurar oscillador para 32MHz
     CLKDIVbits.DOZE = 0; // 1:1
     CLKDIVbits.RCDIV = 0; // 8 MHz
-    //pins digitais
-    ANSA = 0;
+    
+    ANSA = ~0X1; // AN0 analogico, restantes  digitais
     ANSB = ~0x0484;         // RX1, TX1, RB10 digitais, restantes analogicos;
     TRISB= 0b1111111101111111;
     ConfigUART1(19200);
@@ -51,6 +50,9 @@ int main(void){
         i++;
         */
         
+        //==== (3-b)- Medir Tensao no Filamento ====//
+        acq2=readADC(0); // Pin 2 canal 0
+        printf("\n\nacq2 %u",acq2);
         
         _T1IE = 1;  //Activa interrupção do TIMER1
         //__delay_ms(500);
@@ -68,8 +70,8 @@ void _ISRFAST _T1Interrupt(void) {
         v=acq*(0.001221001221);
         // Calc Rt com Divisor de Tensão
         Rt = (1000*v)/(5-v);
-        //temp = 8068.9*exp(-0.026*Rt);
-        temp = 280.2*exp(-50E-5*Rt);
+        temp = 8068.9*exp(-0.026*Rt);
+        //temp = 280.2*exp(-50E-5*Rt); //Thermistor 2 (CASA)
         printf("\n\n [%d] ADC=%d(bytes) Temp=%.2f(Cº) Rt=%.2f(Ohms) v=%.2f(Volts)",i,acq,temp,Rt,v);
         i++;
         cnt = 0; // Reset Clock Count
