@@ -8,9 +8,9 @@
 
 ### Project Dev Boards
 * [RaspberryPi](https://www.raspberrypi.org/) - Server Board
-* [ESP8266](https://www.banggood.com/Geekcreit-Doit-NodeMcu-Lua-ESP8266-ESP-12F-WIFI-Development-Board-p-985891.html?p=FX25081395033201503Y) - IOT Sensor Processing
+* [ESP8266](https://www.banggood.com/Geekcreit-Doit-NodeMcu-Lua-ESP8266-ESP-12F-WIFI-Development-Board-p-985891.html?p=FX25081395033201503Y) - IOT main board
 	- [Datasheet](https://github.com/nodemcu/nodemcu-devkit-v1.0/blob/master/NODEMCU_DEVKIT_V1.0.PDF) - ESP Datasheet
-* [PIC24](TBD) - Extra credit???
+* [PIC24](TBD) - Read Photorestior Sensor
 
 ### Project Sensor Modules
 * [HTU21D](https://www.banggood.com/GY-213V-HTU21D-3_3V-I2C-Temperature-Humidity-Sensor-Module-For-Arduino-p-1184748.html?p=FX25081395033201503Y) - Humidity Sensor
@@ -21,6 +21,7 @@
 </p>
 
 ### How it Works
-* ESP8266 Reads all data from sensors (Humidity/Light/Odometry-encoder)
-* ESP8266 Sends data to RaspberryPi (using node Red???)
-* GG EASY
+* PIC24 - Reads Data from 4 LDR's(using ADC) and sends it to ESP8266 via Uart0
+* ESP8266 - Reads data from HTU21D sensor (Humidity/Temperature) and receives LDR's Light Values via Uart0
+* ESP8266 - Sends all Sensor data to MQQT Broker running at Raspbery pi
+* Raspbery pi - Is running MQQT server and NodeRed, this then creates a webpage where you can see all Sensor Data
