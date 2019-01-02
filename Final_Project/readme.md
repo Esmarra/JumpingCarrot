@@ -17,7 +17,7 @@
 	- [HTU21D  Datasheet](http://www.farnell.com/datasheets/1780639.pdf) - Datasheet
 * [LDR](http://www.resistorguide.com/photoresistor/) - Light dependent resistor
 <p align="center">
-	<img src="/images/si_draft1.png">
+	<img src="/Final_Project/images/si_draft1.png">
 </p>
 
 ### How it Works
