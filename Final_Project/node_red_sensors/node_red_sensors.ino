@@ -1,39 +1,39 @@
-
-
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 #include <Wire.h>
 #include "SparkFunHTU21D.h"
 
-//Create an instance of the object
+// Create Sensor Instance
 HTU21D myHumidity;
 
-// Initializes the ESP_Client.
+// Initialize ESP_Client Wifi
 WiFiClient espClient; //Change This name if you use multiple ESP's
 PubSubClient client(espClient);
 
 
 //======== Global Variables ========//
-int temp_refresh_rate = 20000 ; // Set Data Refreshrate to MQTT Broker in ms
-int light_refresh_rate = 100 ; // Set Data Refreshrate to MQTT Broker in ms
-const int led = LED_BUILTIN;
+int temp_refresh_rate = 20000 ; // HTU21D Refreshrate (Send Data to RPI every N secs)
+int light_refresh_rate = 100 ; // LDR's Refreshrate (Send Data to RPI every N secs)
+const int led = LED_BUILTIN; // Feedback LED
 String serialdata="" ;
 boolean stringComplete = false;  // whether the string is complete
 char str_array[20];
 int ldr_1, ldr_2, ldr_3, ldr_4;
-char ldr_a[5],ldr_b[5],ldr_c[5],ldr_d[5];
+float lux_a,lux_b,lux_c,lux_d;
+char ldr_a[5],ldr_b[5],ldr_c[5],ldr_d[5]; // Acho que isto d? com 4 verificar
 
-// Change the credentials below, so your ESP8266 connects to your router
+//  ESP Network Credencials
 const char* ssid = "DESKTOP-RR394AO 1491";
-const char* password = "fipasgay";
+const char* password = "esmr1234";
 
-// Change the variable to your Raspberry Pi IP address, so it connects to your MQTT broker
+// MQQT_Broker (Raspebry pi IP)
 const char* mqtt_server = "192.168.137.50";
 
-// Timers auxiliar variables
+// Aux Timers
+// HTU21D 
 long now_temp = millis();
 long lastMeasure_temp = 0;
-
+// LDR
 long now_light = millis();
 long lastMeasure_light = 0;
 
@@ -75,41 +75,36 @@ void loop() {
     serialEvent();
     if (stringComplete) {
       //Serial.println(serialdata);
+      // Convert UART rcv string to CharArray
       serialdata.toCharArray(str_array, 22);
-      //Serial.print("str_array=");
       //Serial.print(str_array);
+	  
+      // Recebe String da PIC no formato <XXXX,XXXX,XXXX,XXXX> Guarda Para Endereço
       sscanf(str_array, "<%d,%d,%d,%d>", &ldr_1, &ldr_2, &ldr_3, &ldr_4);
       //Serial.printf("\nA:%d | B:%d | C:%d | D:%d |",ldr_1,ldr_2,ldr_3,ldr_4);
-      //Serial.printf("\n%d,%d,%d,%d",ldr_1,ldr_2,ldr_3,ldr_4);
-      // Linear Mapping Fix This for Exp Mapping
-      ldr_1=map(ldr_1, 225, 2325, 0, 2000);
-      ldr_2=map(ldr_2, 456, 3911, 0, 2000);
-      ldr_3=map(ldr_3, 44, 3447, 0, 2000);
-      ldr_4=map(ldr_4, 24, 3711, 0, 2000);
-      //Serial.printf("\nA:%d | B:%d | C:%d | D:%d |",ldr_1,ldr_2,ldr_3,ldr_4);
+
+      // Sensor Calibration (Convert to Lux), acording to Excel 
+      lux_a=1000/3*log(20*ldr_1/2403);
+      lux_b=10000/31*log(100*ldr_2/17327);
+      lux_c=10000/71*log(5000*ldr_3/14473);
+      lux_d=1250/7*log(1000*ldr_2/14587);
       
       // clear the string:
       serialdata = "";
       stringComplete = false;
     }
+
+    // Conversion to const char*
+    itoa(lux_a,ldr_a,10);
+    itoa(lux_b,ldr_b,10);
+    itoa(lux_c,ldr_c,10);
+    itoa(lux_d,ldr_d,10);
     
-    itoa(ldr_1,ldr_a,10);
-    itoa(ldr_2,ldr_b,10);
-    itoa(ldr_3,ldr_c,10);
-    itoa(ldr_4,ldr_d,10);
-//    Serial.print(" %\t Up: ");
-//    Serial.print(ldr_a);
-//    Serial.print(" | ");
-//    Serial.print(ldr_b);
-//    Serial.print(" | ");
-//    Serial.print(ldr_c);
-//    Serial.print(" | ");
-//    Serial.print(ldr_d);
-//    Serial.print(" | ");
-    client.publish("room/light", ldr_a);
-    client.publish("room/light2", ldr_b);
-    client.publish("room/light3", ldr_c);
-    client.publish("room/light4", ldr_d);
+    // Send Data by topics
+    client.publish("LDR_A", ldr_a);
+    client.publish("LDR_B", ldr_b);
+    client.publish("LDR_C", ldr_c);
+    client.publish("LDR_D", ldr_d);
     
   }
   
