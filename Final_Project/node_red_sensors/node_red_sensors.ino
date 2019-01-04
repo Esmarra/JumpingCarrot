@@ -2,7 +2,7 @@
 #include <PubSubClient.h>
 #include <Wire.h>
 #include "SparkFunHTU21D.h"
-
+// *#*#64663#*#*
 // Create Sensor Instance
 HTU21D myHumidity;
 
@@ -27,7 +27,7 @@ const char* ssid = "DESKTOP-RR394AO 1491";
 const char* password = "esmr1234";
 
 // MQQT_Broker (Raspebry pi IP)
-const char* mqtt_server = "192.168.137.50";
+const char* mqtt_server = "192.168.137.114";
 
 // Aux Timers
 // HTU21D 
