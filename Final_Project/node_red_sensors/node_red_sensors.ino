@@ -82,7 +82,7 @@ void loop() {
       // Convert UART rcv string to CharArray
       serialdata.toCharArray(str_array, 22);
       //Serial.print(str_array);
-	  
+    
       // Recebe String da PIC no formato <XXXX,XXXX,XXXX,XXXX> Guarda Para Endereço
       sscanf(str_array, "<%d,%d,%d,%d>", &ldr_1, &ldr_2, &ldr_3, &ldr_4);
       //Serial.printf("\nA:%d | B:%d | C:%d | D:%d |",ldr_1,ldr_2,ldr_3,ldr_4);
@@ -94,13 +94,20 @@ void loop() {
       //lux_b=10000/31*log(100*ldr_2/17327);
       //lux_c=10000/71*log(5000*ldr_3/14473);
       //lux_d=1250/7*log(1000*ldr_2/14587);
-
+    
+    // ==== Calibration Round 2 ====//
       // Pelo Matlab com valores da lampada
-      lux_a=exp((100*ldr_1)/45543 + 1198/893);
-      lux_b=exp((100*ldr_2)/71513 + 97496/71513);
-      lux_c=exp((25*ldr_3)/17383 + 55805/34766);
-      lux_d=exp((100*ldr_4)/72627 + 115390/72627);
+      //lux_a=exp((100*ldr_1)/45543 + 1198/893);
+      //lux_b=exp((100*ldr_2)/71513 + 97496/71513);
+      //lux_c=exp((25*ldr_3)/17383 + 55805/34766);
+      //lux_d=exp((100*ldr_4)/72627 + 115390/72627);
       
+    // ==== Calibration Round 3 ====//
+    lux_a=exp((100*ldr_1)/25317 + 5873/28130);
+      lux_b=exp((50*ldr_2)/35603 + 166535/35603);
+      lux_c=exp((50*ldr_3)/37647 + 159785/37647);
+      lux_d=exp((50*ldr_4)/39439 + 177045/39439);
+     
       // Pelo Wolfram com valores do telmovel
       //lux_a=exp((100*ldr_1+69571)/31248);
       //lux_b=exp((100*ldr_2+73659)/50493);
@@ -112,6 +119,7 @@ void loop() {
 //      lux_b=exp((100*ldr_2)/50493 + 24553/16831);
 //      lux_c=exp((5*ldr_3)/2627 + 16597/5254);
 //      lux_d=exp((50*ldr_4)/29817 + 31705/9939);
+
       // clear the string:
       serialdata = "";
       stringComplete = false;
