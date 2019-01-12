@@ -26,7 +26,7 @@ int main(void){
     CLKDIVbits.RCDIV = 0; // 8 MHz
     
     ANSA = ~0x0; // RA0 RA1 analog e os outros todos
-    ANSB = ~0x084;         // RX1, TX1, digitais, RB0,RB1 analog e restantes analogicos;
+    ANSB = ~0x084; // RX1, TX1, digitais, RB0,RB1 analog e restantes analogicos;
     TRISA= 0XFFFF; // Porta A inputs
     TRISB= 0xFFFF; // Porta B inputs
     ConfigUART1(19200);
@@ -38,7 +38,6 @@ int main(void){
         acq1=readADC(1); // Pin 3 canal AN1
         acq2=readADC(2); // Pin 4 canal AN2
         acq3=readADC(3); // Pin 5 canal AN3
-        //values_array=[acq0,acq1,acq2,acq3];
         printf("<%u,%u,%u,%u>\n",acq0,acq1,acq2,acq3);
         __delay_ms(500);
     }

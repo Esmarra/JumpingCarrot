@@ -3,11 +3,15 @@ clc; clear all;close all;
 %%==== LDR's Calibration ====%%
 syms x y;
 
-values = 2;
-%==== Trendline Values From Excell ====%%
-% y -> ADC values  |  x -> light values
+adc_res=4095;
+samples=100; % Number of Samples to Plot
+calib_round = 3; % Valid Values: 1 | 2 | 3
 
-if(values==1)
+%==== Trendline calib_round From Excell ====%%
+% y -> ADC calib_round  |  x -> light calib_round
+
+%% Round 1: Sensor Alfa With 1000 lumen Light Bulb & Random lux units %% 
+if(calib_round==1)
     % LDR_A
     eq = y == 312.48*log(x) - 695.71;
     sa=solve(eq,x);
@@ -22,7 +26,8 @@ if(values==1)
     sd=solve(eq,x);
 end
 
-if(values==2)
+%% Round 2: Sensor Alfa With 1000 lumen Light Bulb using Android Photo Sensor %% 
+if(calib_round==2)
     % LDR_A
     eq = y == 455.43*log(x) - 610.98;
     sa=solve(eq,x);
@@ -37,36 +42,51 @@ if(values==2)
     sd=solve(eq,x);
 end
 
-disp('>Solution for LDR A: ')
+%% Round 3: Sensor Final With 680 lumen Light Bulb using Android Photo Sensor %% 
+if(calib_round==3)
+    % LDR_A
+    eq = y == 253.17*log(x) - 52.857;
+    sa=solve(eq,x);
+    % LDR_B
+    eq = y == 712.06*log(x) - 3330.7;
+    sb=solve(eq,x);
+    % LDR_C
+    eq = y == 752.94*log(x) - 3195.7;
+    sc=solve(eq,x);
+    % LDR_D
+    eq = y == 788.78*log(x) - 3540.9;
+    sd=solve(eq,x);
+end
+
+disp('==== Light Value Solutions ====')
+fprintf('>Solution for LDR A:  x = ')
 disp(sa)
-disp('>Solution for LDR B: ')
+fprintf('>Solution for LDR B:  x = ')
 disp(sb)
-disp('>Solution for LDR C: ')
+fprintf('>Solution for LDR C:  x = ')
 disp(sc)
-disp('>Solution for LDR D: ')
+fprintf('>Solution for LDR D:  x = ')
 disp(sd)
 
-max=4095;
-inc=100;
 b=0;
-for(i=1:inc:max)
+for(i=1:samples:adc_res)
     b=b+1;
     ca(b)=eval(subs(sa,y,i));
     cb(b)=eval(subs(sb,y,i));
     cc(b)=eval(subs(sc,y,i));
     cd(b)=eval(subs(sd,y,i));
-    
 end
-xl=linspace(1,max,b);
-figure
+xl=linspace(1,adc_res,b);
+figure('Name','Error Over Samples');
 plot(xl,ca,xl,cb,xl,cc,xl,cd)
 legend('LDR A','LDR B','LDR C','LDR D')
-val=max;
-disp('>Checksum for LDR A: ')
-disp(eval(subs(sa,y,val)))
-disp('>Checksum for LDR B: ')
-disp(eval(subs(sb,y,val)))
-disp('>Checksum for LDR C: ')
-disp(eval(subs(sc,y,val)))
-disp('>Checksum for LDR D: ')
-disp(eval(subs(sd,y,val)))
+
+fprintf('==== Checksum over %.0f samples ====\n',adc_res)
+fprintf('>Light Val for LDR A: ')
+disp(eval(subs(sa,y,adc_res)))
+fprintf('>Light Val for LDR B: ')
+disp(eval(subs(sb,y,adc_res)))
+fprintf('>Light Val for LDR C: ')
+disp(eval(subs(sc,y,adc_res)))
+fprintf('>Light Val for LDR D: ')
+disp(eval(subs(sd,y,adc_res)))

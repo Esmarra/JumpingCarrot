@@ -2,7 +2,8 @@
 #include <PubSubClient.h>
 #include <Wire.h>
 #include "SparkFunHTU21D.h"
-// *#*#64663#*#*
+// Android Light Sensor Hack Code:  *#*#64663#*#*
+
 // Create Sensor Instance
 HTU21D myHumidity;
 
@@ -10,17 +11,16 @@ HTU21D myHumidity;
 WiFiClient espClient; //Change This name if you use multiple ESP's
 PubSubClient client(espClient);
 
-
 //======== Global Variables ========//
 int temp_refresh_rate = 20000 ; // HTU21D Refreshrate (Send Data to RPI every N secs)
 int light_refresh_rate = 350 ; // LDR's Refreshrate (Send Data to RPI every N secs)
 const int led = LED_BUILTIN; // Feedback LED
-String serialdata="" ;
-boolean stringComplete = false;  // whether the string is complete
-char str_array[20];
-int ldr_1, ldr_2, ldr_3, ldr_4;
-float lux_a,lux_b,lux_c,lux_d;
-char ldr_a[5],ldr_b[5],ldr_c[5],ldr_d[5]; // Acho que isto d? com 4 verificar
+String serialdata="" ; // Sring rcv from UART
+boolean stringComplete = false;  // store rcv string complete
+char str_array[20]; // rcv string em char string
+int ldr_1, ldr_2, ldr_3, ldr_4; // Valor Recebido pelo ADC
+float lux_a,lux_b,lux_c,lux_d; // Valor em unidades de Luz em cada LDR (a b c d)
+char ldr_a[5],ldr_b[5],ldr_c[5],ldr_d[5]; // Conversao para char para enviar por MQTT
 
 //  ESP Network Credencials
 const char* ssid = "DESKTOP-RR394AO 1491";
@@ -40,8 +40,8 @@ long lastMeasure_light = 0;
 
 //======== Functions ========//
 void setup_wifi(); // Connect ESP8266 to Router
-void reconnect();
-void callback(String topic, byte* message, unsigned int length) ;
+void reconnect(); // Retry
+void callback(String topic, byte* message, unsigned int length) ; // Subscreve aos Topicos
 void serialEvent(); // Receive ADC values from PIC24
 
 
@@ -52,9 +52,9 @@ void setup() {
   digitalWrite(led, HIGH); // Write to (HIGH IS OFF)
   
   Serial.begin(19200); // Begin Serial Comms
-  setup_wifi(); // Call Start Wifi
+  setup_wifi(); // Start Wifi
   client.setServer(mqtt_server, 1883); // Start Client Server at @Port
-  client.setCallback(callback); // ??? No idea #REVER#
+  client.setCallback(callback); // Inicia Topicos Subscritos
 
   serialdata.reserve(200);
 }
@@ -69,7 +69,7 @@ void loop() {
   if(!client.loop())
     client.connect("ESP8266Client");
 
-  now_light = millis();
+  now_light = millis(); // Timer dos LDRs
   if (now_light - lastMeasure_light > light_refresh_rate) {
     lastMeasure_light = now_light;
     serialEvent();
@@ -144,10 +144,11 @@ void loop() {
       return;
     }
 
-    // Computes temperature values in Celsius
+    // Temperature values in Celsius
     static char temperatureTemp[7];
     dtostrf(t, 6, 2, temperatureTemp);
     
+	// Relative Humidity
     static char humidityTemp[7];
     dtostrf(h, 6, 2, humidityTemp);
     
@@ -212,8 +213,6 @@ void callback(String topic, byte* message, unsigned int length) {
     messageTemp += (char)message[i];
   }
   Serial.println();
-
-  // Feel free to add more if statements to control more GPIOs with MQTT
 
   // If a message is received on the topic room/led, you check if the message is either on or off. Turns the led GPIO according to the message
   if(topic=="room/led"){
