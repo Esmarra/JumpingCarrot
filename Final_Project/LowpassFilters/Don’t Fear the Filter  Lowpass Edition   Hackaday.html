@@ -1,0 +1,2096 @@
+<!DOCTYPE html>
+<html itemscope="itemscope" itemtype="http://schema.org/Article" class="js wf-proximanova-n8-active wf-proximanova-n4-active wf-proximanova-n7-active wf-proximanova-n6-active wf-proximanova-i4-active wf-proximanova-n9-active wf-proximanova-i9-active wf-proximanova-i7-active wf-proximanova-i8-active wf-proximanova-n1-active wf-proximanova-i1-active wf-proximanova-i6-active wf-proximanova-n3-active wf-proximanova-i3-active wf-active" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="dQIcgy2eQ8-zyE6l15aOsCdxiVDUKl84C_zi-lJivYE">
+<meta name="google-site-verification" content="I41e_5mBeAM8AcOI8rSwPioPyN1DXJomC2U2trjvVTI">
+<meta name="viewport" content="width=960">
+<title>Don’t Fear the Filter: Lowpass Edition | Hackaday</title>
+<script async="" src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/analytics.js"></script><script>document.documentElement.className = "js"</script>
+
+<link rel="shortcut icon" href="https://s2.wp.com/wp-content/themes/vip/hackaday-2/favicon.ico">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://hackaday.com/xmlrpc.php">
+<link href="http://google.com/+hackaday" rel="publisher">
+
+<!--[if lt IE 9]>
+    <script src="https://s2.wp.com/wp-content/themes/vip/hackaday-2/js/html5.js"></script>
+<![endif]-->
+
+<meta name="google-site-verification" content="I41e_5mBeAM8AcOI8rSwPioPyN1DXJomC2U2trjvVTI">
+		<script src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/remote-login.php" type="text/javascript"></script>
+		<script type="text/javascript">
+		/* <![CDATA[ */
+			if ( 'function' === typeof WPRemoteLogin ) {
+				document.cookie = "wordpress_test_cookie=test; path=/";
+				if ( document.cookie.match( /(;|^)\s*wordpress_test_cookie\=/ ) ) {
+					WPRemoteLogin();
+				}
+			}
+		/* ]]> */
+		</script>
+		<link rel="dns-prefetch" href="https://s2.wp.com/">
+<link rel="dns-prefetch" href="https://s1.wp.com/">
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://hackadaycom.wordpress.com/">
+<link rel="alternate" type="application/rss+xml" title="Hackaday » Feed" href="https://hackaday.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Hackaday » Comments Feed" href="https://hackaday.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Hackaday » Don’t Fear the Filter: Lowpass Edition Comments Feed" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/feed/">
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+			<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s2.wp.com\/wp-includes\/js\/wp-emoji-release.min.js?m=1532082729h&ver=5.0.3"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="all-css-0-1" href="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/a_002.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var SafeCommentsAjax = {"ajaxurl":"https:\/\/hackaday.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/a_003.js"></script>
+<link rel="stylesheet" id="all-css-0-2" href="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/style.css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='https://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563h&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://hackadaycom.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/">
+<link rel="shortlink" href="https://wp.me/pk3lN-11Sl">
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/?format=json&amp;url=https%3A%2F%2Fhackaday.com%2F2017%2F03%2F08%2Fdont-fear-the-filter-lowpass-edition%2F&amp;for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/?format=xml&amp;url=https%3A%2F%2Fhackaday.com%2F2017%2F03%2F08%2Fdont-fear-the-filter-lowpass-edition%2F&amp;for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Don’t Fear the Filter: Lowpass Edition">
+<meta property="og:url" content="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/">
+<meta property="og:description" content="There comes a time in every electronic designer’s life when, whether they know it or not, they need an analog filter in their design. If you’re coming from a digital background, where e…">
+<meta property="article:published_time" content="2017-03-08T18:01:44+00:00">
+<meta property="article:modified_time" content="2017-03-27T21:40:46+00:00">
+<meta property="og:site_name" content="Hackaday">
+<meta property="og:image" content="https://hackadaycom.files.wordpress.com/2017/03/fear_the_filter_gray.png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="437">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:creator" content="@hackaday">
+<meta name="twitter:site" content="@hackaday">
+<meta name="twitter:text:title" content="Don’t Fear the Filter: Lowpass Edition">
+<meta name="twitter:image" content="https://hackadaycom.files.wordpress.com/2017/03/fear_the_filter_gray.png?w=640">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom">
+
+<!-- End Jetpack Open Graph Tags -->
+<link rel="openid.server" href="https://hackadaycom.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="https://hackadaycom.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="https://hackaday.com/osd.xml" title="Hackaday">
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com">
+
+<link rel="image_src" href="https://hackadaycom.files.wordpress.com/2017/03/fear_the_filter_gray_thumbnail.png?w=600&amp;h=600">
+<meta itemprop="name" content="Don’t Fear the Filter: Lowpass Edition">
+<meta itemprop="description" content="There comes a time in every electronic designer's life when, whether they know it or not, they need an analog filter in their design. If you're coming from a digital background, where everything is ni...">
+<meta itemprop="image" content="https://hackadaycom.files.wordpress.com/2017/03/fear_the_filter_gray_thumbnail.png?w=600&amp;h=600">
+
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+				<style type="text/css">
+			.recentcomments a {
+				display: inline !important;
+				padding: 0 !important;
+				margin: 0 !important;
+			}
+
+			table.recentcommentsavatartop img.avatar, table.recentcommentsavatarend img.avatar {
+				border: 0px;
+				margin: 0;
+			}
+
+			table.recentcommentsavatartop a, table.recentcommentsavatarend a {
+				border: 0px !important;
+				background-color: transparent !important;
+			}
+
+			td.recentcommentsavatarend, td.recentcommentsavatartop {
+				padding: 0px 0px 1px 0px;
+				margin: 0px;
+			}
+
+			td.recentcommentstextend {
+				border: none !important;
+				padding: 0px 0px 2px 10px;
+			}
+
+			.rtl td.recentcommentstextend {
+				padding: 0px 10px 2px 0px;
+			}
+
+			td.recentcommentstexttop {
+				border: none;
+				padding: 0px 0px 0px 10px;
+			}
+
+			.rtl td.recentcommentstexttop {
+				padding: 0px 10px 0px 0px;
+			}
+		</style>
+		<meta name="application-name" content="Hackaday"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="Fresh hacks every day"><meta name="msapplication-task" content="name=Subscribe;action-uri=https://hackaday.com/feed/;icon-uri=https://secure.gravatar.com/blavatar/5560f98f805877b0e332f191cb9e0af3?s=16"><style type="text/css" id="syntaxhighlighteranchor"></style>
+		<link rel="stylesheet" id="custom-css-css" type="text/css" href="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/a.css">
+		
+<script src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/mpm6gph.js"></script>
+<style type="text/css">.tk-proxima-nova{font-family:"proxima-nova",sans-serif;}</style><style type="text/css">@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/55bd39/00000000000000003b9b093f/27/l?subset_id=2&fvd=n9&v=3) format("woff2"),url(https://use.typekit.net/af/55bd39/00000000000000003b9b093f/27/d?subset_id=2&fvd=n9&v=3) format("woff"),url(https://use.typekit.net/af/55bd39/00000000000000003b9b093f/27/a?subset_id=2&fvd=n9&v=3) format("opentype");font-weight:900;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/8b7167/00000000000000003b9b093e/27/l?subset_id=2&fvd=i9&v=3) format("woff2"),url(https://use.typekit.net/af/8b7167/00000000000000003b9b093e/27/d?subset_id=2&fvd=i9&v=3) format("woff"),url(https://use.typekit.net/af/8b7167/00000000000000003b9b093e/27/a?subset_id=2&fvd=i9&v=3) format("opentype");font-weight:900;font-style:italic;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/71f83c/00000000000000003b9b093b/27/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/71f83c/00000000000000003b9b093b/27/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/71f83c/00000000000000003b9b093b/27/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/86b539/00000000000000003b9b093a/27/l?subset_id=2&fvd=i7&v=3) format("woff2"),url(https://use.typekit.net/af/86b539/00000000000000003b9b093a/27/d?subset_id=2&fvd=i7&v=3) format("woff"),url(https://use.typekit.net/af/86b539/00000000000000003b9b093a/27/a?subset_id=2&fvd=i7&v=3) format("opentype");font-weight:700;font-style:italic;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/a3eee8/00000000000000003b9b093c/27/l?subset_id=2&fvd=n8&v=3) format("woff2"),url(https://use.typekit.net/af/a3eee8/00000000000000003b9b093c/27/d?subset_id=2&fvd=n8&v=3) format("woff"),url(https://use.typekit.net/af/a3eee8/00000000000000003b9b093c/27/a?subset_id=2&fvd=n8&v=3) format("opentype");font-weight:800;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/e85210/00000000000000003b9b093d/27/l?subset_id=2&fvd=i8&v=3) format("woff2"),url(https://use.typekit.net/af/e85210/00000000000000003b9b093d/27/d?subset_id=2&fvd=i8&v=3) format("woff"),url(https://use.typekit.net/af/e85210/00000000000000003b9b093d/27/a?subset_id=2&fvd=i8&v=3) format("opentype");font-weight:800;font-style:italic;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/ed0e78/00000000000000003b9b0931/27/l?subset_id=2&fvd=n1&v=3) format("woff2"),url(https://use.typekit.net/af/ed0e78/00000000000000003b9b0931/27/d?subset_id=2&fvd=n1&v=3) format("woff"),url(https://use.typekit.net/af/ed0e78/00000000000000003b9b0931/27/a?subset_id=2&fvd=n1&v=3) format("opentype");font-weight:100;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/942fe1/00000000000000003b9b0930/27/l?subset_id=2&fvd=i1&v=3) format("woff2"),url(https://use.typekit.net/af/942fe1/00000000000000003b9b0930/27/d?subset_id=2&fvd=i1&v=3) format("woff"),url(https://use.typekit.net/af/942fe1/00000000000000003b9b0930/27/a?subset_id=2&fvd=i1&v=3) format("opentype");font-weight:100;font-style:italic;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/27776b/00000000000000003b9b0939/27/l?subset_id=2&fvd=n6&v=3) format("woff2"),url(https://use.typekit.net/af/27776b/00000000000000003b9b0939/27/d?subset_id=2&fvd=n6&v=3) format("woff"),url(https://use.typekit.net/af/27776b/00000000000000003b9b0939/27/a?subset_id=2&fvd=n6&v=3) format("opentype");font-weight:600;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/256534/00000000000000003b9b0938/27/l?subset_id=2&fvd=i6&v=3) format("woff2"),url(https://use.typekit.net/af/256534/00000000000000003b9b0938/27/d?subset_id=2&fvd=i6&v=3) format("woff"),url(https://use.typekit.net/af/256534/00000000000000003b9b0938/27/a?subset_id=2&fvd=i6&v=3) format("opentype");font-weight:600;font-style:italic;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/4838bd/00000000000000003b9b0934/27/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/4838bd/00000000000000003b9b0934/27/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/4838bd/00000000000000003b9b0934/27/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/6aec08/00000000000000003b9b0935/27/l?subset_id=2&fvd=i4&v=3) format("woff2"),url(https://use.typekit.net/af/6aec08/00000000000000003b9b0935/27/d?subset_id=2&fvd=i4&v=3) format("woff"),url(https://use.typekit.net/af/6aec08/00000000000000003b9b0935/27/a?subset_id=2&fvd=i4&v=3) format("opentype");font-weight:400;font-style:italic;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/437c3d/00000000000000003b9b0932/27/l?subset_id=2&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/437c3d/00000000000000003b9b0932/27/d?subset_id=2&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/437c3d/00000000000000003b9b0932/27/a?subset_id=2&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/f02b29/00000000000000003b9b0933/27/l?subset_id=2&fvd=i3&v=3) format("woff2"),url(https://use.typekit.net/af/f02b29/00000000000000003b9b0933/27/d?subset_id=2&fvd=i3&v=3) format("woff"),url(https://use.typekit.net/af/f02b29/00000000000000003b9b0933/27/a?subset_id=2&fvd=i3&v=3) format("opentype");font-weight:300;font-style:italic;}</style><script>try{Typekit.load();}catch(e){}</script>
+
+<!-- Supplyframe Ads -->
+	<script type="text/javascript">
+		function OA_show(e){if(typeof OA_output[e]=="undefined"){return}else{document.write(OA_output[e])}}function OA_showpop(e){zones=window.OA_zones?window.OA_zones:false;var t=e;if(typeof window.OA_zones!="undefined"){if(typeof zones[e]=="undefined"){return}t=zones[e]}var n="<"+"script type='text/javascript' ";n+="src='"+OA_p+"?zoneid="+t;n+="&source="+escape(OA_source)+"&r="+OA_r;OA_spc+="&amp%3Bblock=1";if(window.location)n+="&loc="+escape(window.location);if(document.referrer)n+="&referer="+escape(document.referrer);n+="'><"+"/script>";document.write(n)}if(typeof OA_zones!="undefined"){var OA_zoneids="";for(var zonename in OA_zones)OA_zoneids+=escape(zonename+"="+OA_zones[zonename]+"|");OA_zoneids+="&nz=1"}else{var OA_zoneids=escape("426|427|428|429")}if(typeof OA_source=="undefined"){OA_source=""}var OA_p=location.protocol=="https:"?"https://ads.supplyframe.com/openads/www/delivery/spc.php":"http://ads.supplyframe.com/openads/www/delivery/spc.php";var OA_r=Math.floor(Math.random()*99999999);OA_output=new Array;var OA_spc="<"+"script type='text/javascript' ";OA_spc+="src='"+OA_p+"?zones="+OA_zoneids;OA_spc+="&source="+escape(OA_source)+"&r="+OA_r;OA_spc+="&amp%3Bblock=1";OA_spc+=document.charset?"&charset="+document.charset:document.characterSet?"&charset="+document.characterSet:"";if(window.location)OA_spc+="&loc="+escape(window.location);if(document.referrer)OA_spc+="&referer="+escape(document.referrer);OA_spc+="'><"+"/script>";document.write(OA_spc);var OA_fo="";OA_fo+="<"+"script type='text/javascript' src='//ads.supplyframe.com/openads/www/delivery/fl.js'><"+"/script>\n";document.write(OA_fo);
+	</script><script type="text/javascript" src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/spc"></script><script type="text/javascript" src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/fl.js"></script>
+
+
+<style type="text/css"></style></head>
+
+<body class="post-template-default single single-post postid-245541 single-format-standard mp6 customizer-styles-applied group-blog highlander-enabled highlander-light">
+<div id="page" class="hfeed site">
+    <div id="leaderboard">
+        <script type="text/javascript">
+            OA_show(426);
+        </script>
+    </div>
+
+    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+    <header id="masthead" class="site-header" role="banner">
+        <div class="site-branding">
+            <a href="https://hackaday.com/" rel="home">
+                <img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/logo.png" alt="Logo" class="logo-img" scale="0">
+            </a>
+            <h1 class="site-title">
+                <a href="https://hackaday.com/" rel="home">Hackaday</a>
+            </h1>
+        </div>
+
+        <button class="menu-toggle"><span class="icon icon-navbar-toggle">Primary Menu</span></button>
+
+        <nav id="site-navigation" class="main-navigation" role="navigation">
+            <div class="menu-main-container"><ul id="menu-main" class="menu nav-menu"><li id="menu-item-90201" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-90201"><a href="https://www.hackaday.com/">Home</a></li>
+<li id="menu-item-136904" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-136904"><a href="https://hackaday.com/blog/">Blog</a></li>
+<li id="menu-item-115276" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-115276"><a href="https://hackaday.io/?from=had&amp;utm_source=hackaday&amp;utm_medium=menu&amp;utm_campaign=blog">Hackaday.io</a></li>
+<li id="menu-item-97770" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-97770"><a href="https://www.tindie.com/?utm_source=hackaday&amp;utm_medium=link&amp;utm_campaign=fromstore">Tindie</a></li>
+<li id="menu-item-136905" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-136905"><a title="Build Something that Matters" href="https://hackaday.io/prize">Hackaday Prize</a></li>
+<li id="menu-item-77211" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77211"><a href="https://hackaday.com/submit-a-tip/">Submit</a></li>
+<li id="menu-item-101802" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101802"><a href="https://hackaday.com/about/">About</a></li>
+</ul></div>		<aside id="hackaday_calendar-2" class="widget widget_hackaday_calendar"><div id="hackaday_calendar_wrap"><label class="calendar_current_time">January 11, 2019</label></div></aside>        </nav><!-- #site-navigation -->
+    </header><!-- #masthead -->
+
+    <div id="content" class="site-content">
+
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
+
+        
+            
+<article itemscope="" itemtype="http://schema.org/Article" id="post-245541" class="post-245541 post type-post status-publish format-standard has-post-thumbnail hentry category-engineering category-hackaday-columns category-how-to category-slider tag-analog tag-filtering tag-howto tag-op-amp tag-sallen-key series_of_posts-dont-fear-the-filter">
+    <header class="entry-header">
+        <h1 class="entry-title" itemprop="name">Don’t Fear the Filter: Lowpass Edition</h1>
+        <div class="entry-meta">
+            <a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comments" class="comments-counts"><span class="icon-hackaday icon-hackaday-comment"></span>
+                27 Comments            </a>
+            <ul class="meta-authors vcard author">
+                <li>by:</li>
+                <span class="fn"><a href="https://hackaday.com/author/hexagon5un/" title="Posts by Elliot Williams" class="author url fn" rel="author">Elliot Williams</a></span>
+            </ul>
+        </div><!-- .entry-meta -->
+
+        <div class="entry-meta entry-meta-last">
+            <span class="entry-date published updated" itemprop="datePublished" content="March 8, 2017"><a href="https://hackaday.com/2017/03/08/" title="March 8, 2017 - 10:01 am">March 8, 2017</a></span>
+            <ul class="share-post">
+                <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhackaday.com%2F2017%2F03%2F08%2Fdont-fear-the-filter-lowpass-edition%2F" target="_blank"><span class="icon-hackaday icon-hackaday-facebook"></span></a></li>
+               <li><a href="https://twitter.com/intent/tweet?text=Don%26%238217%3Bt+Fear+the+Filter%3A+Lowpass+Edition%20via%20@hackaday&amp;url=https%3A%2F%2Fhackaday.com%2F2017%2F03%2F08%2Fdont-fear-the-filter-lowpass-edition%2F" target="_blank"><span class="icon-hackaday icon-hackaday-twitter"></span></a></li>
+                <li><a href="https://plus.google.com/share?url=https%3A%2F%2Fhackaday.com%2F2017%2F03%2F08%2Fdont-fear-the-filter-lowpass-edition%2F&amp;h1=en-US" target="_blank"><span class="icon-hackaday icon-hackaday-google"></span></a></li>
+            </ul>
+        </div><!-- .entry-meta -->
+
+        <div class="entry-featured-image"><img itemprop="image" content="https://hackadaycom.files.wordpress.com/2017/03/fear_the_filter_gray_thumbnail.png?w=600&amp;h=600" src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/fear_the_filter_gray.png" alt="" srcset="https://hackadaycom.files.wordpress.com/2017/03/fear_the_filter_gray.png?w=800&amp;zoom=2 1.5x" scale="1.5" width="800" height="437"></div>
+    </header><!-- .entry-header -->
+
+    <div class="entry-content" itemprop="articleBody">
+        <p>There comes a time in every electronic designer’s life when, 
+whether they know it or not, they need an analog filter in their design.
+ If you’re coming from a digital background, where everything is nice 
+and numeric, the harsh reality of continuous voltages can be a bit of a 
+shock. But if you’re taking input from, or sending output to the big 
+analog world out there, it pays to at least think about the 
+frequency-domain properties of the signal, and maybe even do something 
+about them.</p>
+<p>Designing an analog filter to fit your needs <em>can</em> be a bit of
+ a daunting task: there are many factors that you’re going to need to 
+consider, and they all interact. It’s easy to get lost. We’re going to 
+simplify this as much as possible by instead focusing on a few common 
+applications and building up the simplest possible filters that work 
+well for them.</p>
+<p>Today, we’re going to consider the lowpass filter, and specifically a
+ Sallen-Key filter with Butterworth characteristics and a second-order 
+rolloff. Sound like word salad? We’ll fix that up right away, because 
+this is probably the single most important filter to have in your analog
+ toolbox for two very common use cases: pulse-width modulated (PWM) 
+output and analog-to-digital conversion (ADC) input.</p>
+<p><span id="more-245541"></span></p>
+<h2 id="the-problem">The Problem(s)</h2>
+<p>PWM output and ADC sampling on input have two things in common, there
+ is a low-frequency signal that you’re interested in but it’s mixed 
+together with some high-frequency content that you don’t want. In the 
+PWM case, the high-frequency content comes from the underlying square 
+wave whose duty cycle is being modulated — all you want is the average 
+value over a few cycles.</p>
+<p>A lot of the time you can ignore this high frequency output noise. 
+Blinking an LED very quickly is no problem, and your eyes respond so 
+slowly that they effectively do the lowpass filtering for you. When 
+driving a motor with PWM at a high enough frequency, the motor windings 
+form inductors that smooth out the signal for you. For audio out to 
+speakers, or motor driving with a slower PWM frequency, or for creating 
+your own DAC from the PWM, you’ll want to filter out the highs.</p>
+<p><a href="https://hackadaycom.files.wordpress.com/2017/02/tenwave2.png" target="_blank"><img data-attachment-id="245763" data-permalink="https://hackaday.com/tenwave-3/" data-orig-file="https://hackadaycom.files.wordpress.com/2017/02/tenwave2.png" data-orig-size="800,500" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="tenwave" data-image-description="" data-medium-file="https://hackadaycom.files.wordpress.com/2017/02/tenwave2.png?w=400&amp;h=250" data-large-file="https://hackadaycom.files.wordpress.com/2017/02/tenwave2.png?w=800" class="alignright wp-image-245763 size-medium" src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/tenwave2.png" srcset="https://hackadaycom.files.wordpress.com/2017/02/tenwave2.png?w=400&amp;h=250 400w, https://hackadaycom.files.wordpress.com/2017/02/tenwave2.png?w=250&amp;h=156 250w, https://hackadaycom.files.wordpress.com/2017/02/tenwave2.png?w=768&amp;h=480 768w, https://hackadaycom.files.wordpress.com/2017/02/tenwave2.png 800w" sizes="(max-width: 400px) 100vw, 400px" width="400" height="250"></a>In
+ sampling with an ADC, the frequency issue is more subtle: you want to 
+pre-filter out all of the undesired frequency content that’s higher than
+ half of your sampling frequency, because otherwise it folds into lower 
+frequencies and messes up your data. The mathematical reason is the <a href="https://en.wikipedia.org/wiki/Shannon_sampling_theorem" target="_blank">Nyquist-Shannon sampling theorem</a>, but for intuition, there’s the <a href="https://en.wikipedia.org/wiki/Wagon-wheel_effect" target="_blank">wagon-wheel effect</a>.
+ When you’re sampling infrequently, “higher than half of your sampling 
+frequency” is nearly everything, so there’s a lot to filter out.</p>
+<p>The solution? Well, there are two. The first is to sample at more that twice the <em>nuisance</em>
+ frequency and take averages in firmware. But when you’re already 
+sampling really fast, or if the nuisance frequency is very high, that’s 
+not an option. The analog solution is to get rid of the nuisance signals
+ directly by filtering them&nbsp;away, and sampling just faster than 
+twice the frequency of the <em>desired</em> signal. This is called 
+lowpass sampling, and if you’re periodically reading an ADC without a 
+filter up front, you’re lowpass sampling without the lowpass filter, and
+ if there’s any strong higher-frequency signal mixed in, your resulting 
+data is messed up. So you need a lowpass filter.</p>
+<p>The other big difference between the PWM and ADC cases is that we 
+want an audio waveform out of the PWM, which means a higher frequency AC
+ signal, but in the ADC case we’re interested in the DC component of a 
+low-frequency signal. Frequency range and AC/DC voltage offset will 
+matter for the practical implementation of the filter, so it’s good to 
+see both cases.</p>
+<h2 id="filter-design-primer">Filter Design Primer</h2>
+<p>There are at least five choices you have to make in designing a 
+filter, and they’re all interdependent. When you add in other common 
+pitfalls of analog design, like amplifier instability, range, slew rate,
+ bandwidth, and distortion, parts tolerances, and real-world concerns 
+like <a href="https://hackaday.com/2015/07/29/say-it-with-me-input-impedance/">input and output impedance</a>, it’s enough to drive you crazy. Here’s a whirlwind tour.</p>
+<ul>
+<li><strong>Type</strong>: What frequencies do you want? Which do you 
+want to get rid of? This determines whether you want a lowpass or 
+highpass or bandpass filter, for instance. Today, we’re going for a <em>lowpass</em>.</li>
+<li><strong>Topology</strong>: This is the actual circuit design. Here, we’re looking at a simple <em>Sallen-Key</em>
+ filter topology because it’s stable and makes the lightest demands on 
+the op-amp that we’re using. Even so, we’ll see that op-amp choice can 
+matter.</li>
+<li><strong>Order/Rolloff</strong>: The rate at which the high frequencies are <a href="https://en.wikipedia.org/wiki/Roll-off" target="_blank">rolled off</a>
+ depends on the order: the number of reactive components (here 
+capacitors) in the design. You can make steeper filters if you need to 
+by cascading single stages, and we’ll do that later. For now, we’ll be 
+satisfied with a second-order filter that reduces the amplitude of the 
+signal by a factor of four for every doubling of the frequency (a -12 dB
+ per octave rolloff).</li>
+<li><strong>Response</strong>: Some filter shapes over-emphasize certain
+ frequencies and exhibit more overshoot or ringing in the time domain in
+ trade for a steeper cutoff of the undesired frequencies. You can <a href="http://www.etc.tuiasi.ro/cin/Downloads/Filters/Filters.htm#ChooseFilter" target="_blank">read more about that</a> on your own time. Here, we’re going with a <em>Butterworth</em>
+ response because it’s a nice midpoint between doing little damage to 
+the signal and getting quickly to the eventual rolloff rate.</li>
+<li><strong>Cutoff Frequency</strong>: The boundary between the 
+frequencies that we want to keep (in a lowpass, the lows) and those we 
+want to remove (the highs) is another important parameter that’s set by 
+component choice.</li>
+</ul>
+<p>A very good, if a bit advanced, resource on filter design is Chapter Eight of Analog Devices’ <em><a href="http://www.analog.com/en/education/education-library/linear-circuit-design-handbook.html" target="_blank">Linear Circuit Design Handbook</a></em>. If you’re not feeling the math, you can skip the section on <em>s transforms</em>
+ without losing out much. The remaining 140+ pages are pure gold, and 
+should help get you through any analog filter design. We’re taking the 
+expressway here, but if you want to enjoy the scenic route, go check it 
+out. <a href="http://www.ti.com/litv/pdf/sloa093" target="_blank"><em>Filter Design in Thirty Seconds</em>&nbsp;(PDF)</a>
+ is a quickie guide, and very much in the spirit of this series. It’s a 
+great refresher once you’ve been through everything once or twice, but 
+it naturally leaves out a lot of the good stuff.</p>
+<h2 id="sallen-key-lowpass-a-workhorse">Sallen-Key Lowpass: A Workhorse</h2>
+<p>A generic filter design starts with at least the five choices 
+mentioned above. I’ve chosen four of them for you, which leaves one 
+dimension, and it’s entirely independent of the others. A second-order, 
+Butterworth-response Sallen-Key filter is the <a href="https://en.wikipedia.org/wiki/Pareto_principle" target="_blank">Pareto-principle solution</a>,
+ giving you 80% of the benefit for 20% of the effort. Some configuration
+ of Sallen-Key filter will work for most specifications, and we’ll 
+handle complications like multiple stage filters and other circuit 
+topologies for special cases later on. For now, here’s the basic circuit
+ diagram.</p>
+<p><a href="https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-basic1.png" target="_blank"><img data-attachment-id="245735" data-permalink="https://hackaday.com/sallen-key-lowpass-basic-2/" data-orig-file="https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-basic1.png" data-orig-size="2128,1158" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="sallen-key-lowpass-basic" data-image-description="" data-medium-file="https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-basic1.png?w=400&amp;h=218" data-large-file="https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-basic1.png?w=800" class="alignright wp-image-245735 size-medium" src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/sallen-key-lowpass-basic1.png" srcset="https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-basic1.png?w=400&amp;h=218 400w, https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-basic1.png?w=800&amp;h=436 800w, https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-basic1.png?w=250&amp;h=136 250w, https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-basic1.png?w=768&amp;h=418 768w" sizes="(max-width: 400px) 100vw, 400px" width="400" height="218"></a></p>
+<p>The beauty of this circuit is that the two resistors can be the same,
+ and they usually will be, but that they don’t need to be particularly 
+tightly matched, so that component tolerances aren’t an issue. The two 
+capacitors <em>do</em> want to be in roughly the correct ratio because 
+this determines the response type, but again these aren’t critical and a
+ simple way to get a factor-of-two capacitance is simply to use two of 
+the same capacitors in parallel. Finally, the op-amp is used as a simple
+ buffer or amplifier stage, rather than being implicated in 
+frequency-determining gymnastics. As mentioned above, this places the 
+minimum demands on the high-frequency gain of the op-amp.</p>
+<p>Enough praise of the Sallen-Key topology, let’s build something practical.</p>
+<h2 id="pwm-output-filtering">PWM Output Filtering</h2>
+<p>Imagine that you want to produce an audio-rate waveform by PWM. Maybe
+ it’s for sample playback, maybe it’s simple beeping or booping. The 
+solution that you’ve perhaps seen before is to simply throw a <a href="https://en.wikipedia.org/wiki/RC_circuit" target="_blank">resistor and capacitor on the output</a>.
+ This works, but has two drawbacks: the rolloff is only 3 dB per octave 
+so there’s less attenuation of the higher PWM frequency, and it’s a 
+passive filter which increases the output impedance across the board, 
+making it quieter even for the low-frequency components that we want to 
+keep. You could cascade two R-C lowpass filters to steepen the rolloff, 
+but they interact and the circuit gets messy. It’s better to toss an 
+op-amp in the mix and solve both problems at once.</p>
+<p><a href="https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-ac2.png" target="_blank"><img data-attachment-id="246345" data-permalink="https://hackaday.com/sallen-key-lowpass-ac-3/" data-orig-file="https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-ac2.png" data-orig-size="2128,1134" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="sallen-key-lowpass-ac" data-image-description="" data-medium-file="https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-ac2.png?w=400&amp;h=213" data-large-file="https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-ac2.png?w=800" class="alignright wp-image-246345 size-medium" src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/sallen-key-lowpass-ac2.png" srcset="https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-ac2.png?w=400&amp;h=213 400w, https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-ac2.png?w=800&amp;h=426 800w, https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-ac2.png?w=250&amp;h=133 250w, https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-ac2.png?w=768&amp;h=409 768w" sizes="(max-width: 400px) 100vw, 400px" width="400" height="213"></a>The product of <code>C</code> (here, the value of <code>C2</code>) and <code>R</code> determines the cutoff frequency, like so: <span class="math inline"><img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/latex.png" alt="F = \frac{1}{2 \pi \sqrt{C_1 C_2 R_1 R_2}} = \frac{1}{2 \sqrt{2} \pi C R} " title="F = \frac{1}{2 \pi \sqrt{C_1 C_2 R_1 R_2}} = \frac{1}{2 \sqrt{2} \pi C R} " class="latex" srcset="https://s0.wp.com/latex.php?latex=F+%3D+%5Cfrac%7B1%7D%7B2+%5Cpi+%5Csqrt%7BC_1+C_2+R_1+R_2%7D%7D+%3D+%5Cfrac%7B1%7D%7B2+%5Csqrt%7B2%7D+%5Cpi+C+R%7D+&amp;bg=1a1a1a&amp;fg=ffffff&amp;s=1&amp;zoom=2 1.5x" scale="1.5" width="221" height="28"></span>. You have a lot of freedom in choosing the values. A good rule of thumb is to keep <code>R</code> in the range of 500 Ω to 200 kΩ. I usually ballpark a <code>C</code>
+ value for 10 kΩ and then pick a capacitor that works and fine-tune the 
+cutoff frequency by tweaking the resistors until it’s right. For 
+experimentation, two 50 kΩ pots or a stereo pot would be ideal.</p>
+<p>Here, we’re aiming at an audio PWM, so ideally we’d set the cutoff of
+ the filter around 20 kHz, at the top of human hearing. In an ideal 
+world, our PWM frequency would be so much higher than 20 kHz that we 
+wouldn’t have to compromise. In the real world, where we might be 
+running PWM frequencies as low as 30-40 kHz, a cutoff of around 10 kHz 
+is maybe a better goal. Plugging in 10 kΩ gives 1.13 nF. It’s almost too
+ perfect! We’ll pick a 1 nF C and tweak the 10 kΩ if we need to 
+fine-tune.</p>
+<p>The ratio of the two capacitor values determines the response type of
+ the filter. Again, we’ve settled on Butterworth as a good compromise, 
+and because it makes the math easy. If you want other responses, your 
+best bet is to dig up a <a href="http://www.daycounter.com/Filters/Sallen-Key-LP-Calculator.phtml" target="_blank">filter design tool online</a>
+ to do the math for you. Ratios higher than two reach the cutoff rate 
+faster, but exhibit frequency ripple. Ratios less than one roll off more
+ slowly at first but have better impulse-response properties, or 
+equivalently better phase linearity. Butterworth is the sweet spot for 
+us.</p>
+<p>Because this is an audio application, we don’t care about the 
+absolute voltage, just the wiggles. An input capacitor decouples the 
+voltage level of the microcontroller’s PWM and the pair of 100 kΩ bias 
+the signal to the middle of the op-amp’s voltage range. An output 
+capacitor decouples again, so the signal is ready to plug into whatever 
+amplifier you’ve got. The values of these capacitors don’t matter much, 
+but they have to be a lot bigger than <code>C</code>. I used 1 µF here.</p>
+<div data-carousel-extra="{&quot;blog_id&quot;:4779443,&quot;permalink&quot;:&quot;https:\/\/hackaday.com\/2017\/03\/08\/dont-fear-the-filter-lowpass-edition\/&quot;}" id="gallery-245541-1" class="gallery galleryid-245541 gallery-columns-2 gallery-size-medium"><figure class="gallery-item">
+			<div class="gallery-icon landscape">
+				<a href="https://hackaday.com/scope_73/"><img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/scope_73.png" class="attachment-medium size-medium" alt="" aria-describedby="gallery-245541-1-245650" srcset="https://hackadaycom.files.wordpress.com/2017/02/scope_73.png?w=400&amp;h=276 400w, https://hackadaycom.files.wordpress.com/2017/02/scope_73.png?w=800 800w, https://hackadaycom.files.wordpress.com/2017/02/scope_73.png?w=250 250w, https://hackadaycom.files.wordpress.com/2017/02/scope_73.png?w=768 768w" sizes="(max-width: 400px) 100vw, 400px" data-attachment-id="245650" data-permalink="https://hackaday.com/scope_73/" data-orig-file="https://hackadaycom.files.wordpress.com/2017/02/scope_73.png" data-orig-size="1024,706" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="scope_73" data-image-description="" data-medium-file="https://hackadaycom.files.wordpress.com/2017/02/scope_73.png?w=400&amp;h=276" data-large-file="https://hackadaycom.files.wordpress.com/2017/02/scope_73.png?w=800" width="400" height="276"></a>
+			</div>
+				<figcaption class="wp-caption-text gallery-caption" id="gallery-245541-1-245650">
+				PWM in yellow, filtered in green
+				</figcaption></figure><figure class="gallery-item">
+			<div class="gallery-icon landscape">
+				<a href="https://hackaday.com/scope_74-2/"><img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/scope_74.png" class="attachment-medium size-medium" alt="" aria-describedby="gallery-245541-1-245651" srcset="https://hackadaycom.files.wordpress.com/2017/02/scope_74.png?w=400&amp;h=276 400w, https://hackadaycom.files.wordpress.com/2017/02/scope_74.png?w=800 800w, https://hackadaycom.files.wordpress.com/2017/02/scope_74.png?w=250 250w, https://hackadaycom.files.wordpress.com/2017/02/scope_74.png?w=768 768w" sizes="(max-width: 400px) 100vw, 400px" data-attachment-id="245651" data-permalink="https://hackaday.com/scope_74-2/" data-orig-file="https://hackadaycom.files.wordpress.com/2017/02/scope_74.png" data-orig-size="1024,706" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="scope_74" data-image-description="" data-medium-file="https://hackadaycom.files.wordpress.com/2017/02/scope_74.png?w=400&amp;h=276" data-large-file="https://hackadaycom.files.wordpress.com/2017/02/scope_74.png?w=800" width="400" height="276"></a>
+			</div>
+				<figcaption class="wp-caption-text gallery-caption" id="gallery-245541-1-245651">
+				PWM and filtered closeup: still some wiggling, but tolerable.
+				</figcaption></figure>
+		</div>
+
+<h4 id="op-amp-selection">Op-Amp Selection</h4>
+<p>One of the reasons to choose a Sallen-Key filter circuit is that it’s
+ easy on the op-amp. As drawn here, the op-amp is simply buffering the 
+signal — it doesn’t have to manipulate any voltages in feedback to 
+control anything. This means that if your op-amp has a frequency range 
+that goes as high as the cutoff frequency, you’re good to go. I used 
+garden-variety TL074s for this demo, and almost anything will work fine.
+ I say almost because I initially tried an LM324 (which is the quad 
+version of the popular LM358), and it choked on the square wave input.</p>
+<p>In particular, the LM324 and LM358 have bad crossover distortion, so 
+when the PWM input switches rapidly from on to off, the op-amp fails to 
+track it. This shows up as nasty little spikes in the output. Some 
+crossover distortion will be evident with any op-amp, but it’s 
+especially horrible with the LM324. I generally love the LM324 because 
+it’s cheap and works with input voltages as low as ground. We’ll use it 
+below for slow ADC sample filtering, but its poor crossover performance 
+makes it inappropriate for PWM filtering.</p>
+<div data-carousel-extra="{&quot;blog_id&quot;:4779443,&quot;permalink&quot;:&quot;https:\/\/hackaday.com\/2017\/03\/08\/dont-fear-the-filter-lowpass-edition\/&quot;}" id="gallery-245541-2" class="gallery galleryid-245541 gallery-columns-2 gallery-size-medium"><figure class="gallery-item">
+			<div class="gallery-icon landscape">
+				<a href="https://hackaday.com/scope_79-2/"><img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/scope_79.png" class="attachment-medium size-medium" alt="" aria-describedby="gallery-245541-2-245652" srcset="https://hackadaycom.files.wordpress.com/2017/02/scope_79.png?w=400&amp;h=276 400w, https://hackadaycom.files.wordpress.com/2017/02/scope_79.png?w=800 800w, https://hackadaycom.files.wordpress.com/2017/02/scope_79.png?w=250 250w, https://hackadaycom.files.wordpress.com/2017/02/scope_79.png?w=768 768w" sizes="(max-width: 400px) 100vw, 400px" data-attachment-id="245652" data-permalink="https://hackaday.com/scope_79-2/" data-orig-file="https://hackadaycom.files.wordpress.com/2017/02/scope_79.png" data-orig-size="1024,706" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="scope_79" data-image-description="" data-medium-file="https://hackadaycom.files.wordpress.com/2017/02/scope_79.png?w=400&amp;h=276" data-large-file="https://hackadaycom.files.wordpress.com/2017/02/scope_79.png?w=800" width="400" height="276"></a>
+			</div>
+				<figcaption class="wp-caption-text gallery-caption" id="gallery-245541-2-245652">
+				LM324 Bad!
+				</figcaption></figure><figure class="gallery-item">
+			<div class="gallery-icon landscape">
+				<a href="https://hackaday.com/scope_80/"><img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/scope_80.png" class="attachment-medium size-medium" alt="" aria-describedby="gallery-245541-2-245653" srcset="https://hackadaycom.files.wordpress.com/2017/02/scope_80.png?w=400&amp;h=276 400w, https://hackadaycom.files.wordpress.com/2017/02/scope_80.png?w=800 800w, https://hackadaycom.files.wordpress.com/2017/02/scope_80.png?w=250 250w, https://hackadaycom.files.wordpress.com/2017/02/scope_80.png?w=768 768w" sizes="(max-width: 400px) 100vw, 400px" data-attachment-id="245653" data-permalink="https://hackaday.com/scope_80/" data-orig-file="https://hackadaycom.files.wordpress.com/2017/02/scope_80.png" data-orig-size="1024,706" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="scope_80" data-image-description="" data-medium-file="https://hackadaycom.files.wordpress.com/2017/02/scope_80.png?w=400&amp;h=276" data-large-file="https://hackadaycom.files.wordpress.com/2017/02/scope_80.png?w=800" width="400" height="276"></a>
+			</div>
+				<figcaption class="wp-caption-text gallery-caption" id="gallery-245541-2-245653">
+				TL074 Better!
+				</figcaption></figure>
+		</div>
+
+<h3 id="anti-aliasing-pre-sampling-filter">Anti-Aliasing, Pre-Sampling Filter</h3>
+<p>Let’s follow on with the example of a light sensor in the presence of
+ flickering interior lighting. Imagine that we want to track per-second 
+changes in light and smooth out the noise. As long as this is going into
+ the input of a microcontroller’s ADC, we might as well scale the output
+ to fit while we’re at it. Unlike in the PWM case, we care about the DC 
+offset here — indeed, it’s what we’re trying to measure — so we’ll be 
+directly coupling the filter to the output of the light sensor.</p>
+<p>It may be a little bit odd to think of this as an anti-aliasing 
+filter because of the low frequency, but the principles are the same — 
+this is a lowpass sampling application. If we’re interested in detecting
+ one-second changes, we can filter with a cutoff at 1 Hz and sample 
+twice that fast, two times per second. The same idea works for sampling 
+higher frequencies too, but the demands on the op-amp and the ADC get 
+more pronounced. It’s better to start off easy.&nbsp;Here’s the circuit I
+ have in mind.</p>
+<p><a href="https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-light1.png" target="_blank"><img data-attachment-id="245736" data-permalink="https://hackaday.com/sallen-key-lowpass-light-2/" data-orig-file="https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-light1.png" data-orig-size="2128,1599" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="sallen-key-lowpass-light" data-image-description="" data-medium-file="https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-light1.png?w=400&amp;h=301" data-large-file="https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-light1.png?w=800" class="wp-image-245736 size-medium alignleft" src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/sallen-key-lowpass-light1.png" srcset="https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-light1.png?w=400&amp;h=301 400w, https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-light1.png?w=800&amp;h=602 800w, https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-light1.png?w=250&amp;h=188 250w, https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-light1.png?w=768&amp;h=577 768w" sizes="(max-width: 400px) 100vw, 400px" width="400" height="301"></a>The
+ photoresistor and 2.2 kΩ resistor form a voltage divider that’s 
+dependent on the amount of light hitting it. (Pro-tip: If you want to 
+pick an optimal resistor for any voltage-divider-like setup, multiply 
+the maximum and minimum resistances that you’re interested in, and take 
+the square root. The result, the harmonic mean, is the lower resistor 
+value that you want.)</p>
+<p>I wanted a cutoff frequency around one second for this filter, so I 
+initially ran the math with a 10 kΩ resistor, and got 10 µF — too large 
+for my liking. Scaling the cap down by ten and the resistor up by ten is
+ just about right. Because we’re interested in the DC values, simply 
+drop the input capacitor and bias resistors and the output blocking cap.</p>
+<div data-carousel-extra="{&quot;blog_id&quot;:4779443,&quot;permalink&quot;:&quot;https:\/\/hackaday.com\/2017\/03\/08\/dont-fear-the-filter-lowpass-edition\/&quot;}" id="gallery-245541-3" class="gallery galleryid-245541 gallery-columns-2 gallery-size-medium"><figure class="gallery-item">
+			<div class="gallery-icon landscape">
+				<a href="https://hackaday.com/scope_87/"><img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/scope_87.png" class="attachment-medium size-medium" alt="" aria-describedby="gallery-245541-3-245655" srcset="https://hackadaycom.files.wordpress.com/2017/02/scope_87.png?w=400&amp;h=276 400w, https://hackadaycom.files.wordpress.com/2017/02/scope_87.png?w=800 800w, https://hackadaycom.files.wordpress.com/2017/02/scope_87.png?w=250 250w, https://hackadaycom.files.wordpress.com/2017/02/scope_87.png?w=768 768w" sizes="(max-width: 400px) 100vw, 400px" data-attachment-id="245655" data-permalink="https://hackaday.com/scope_87/" data-orig-file="https://hackadaycom.files.wordpress.com/2017/02/scope_87.png" data-orig-size="1024,706" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="scope_87" data-image-description="" data-medium-file="https://hackadaycom.files.wordpress.com/2017/02/scope_87.png?w=400&amp;h=276" data-large-file="https://hackadaycom.files.wordpress.com/2017/02/scope_87.png?w=800" width="400" height="276"></a>
+			</div>
+				<figcaption class="wp-caption-text gallery-caption" id="gallery-245541-3-245655">
+				Raw and Filtered Light Sensor
+				</figcaption></figure><figure class="gallery-item">
+			<div class="gallery-icon landscape">
+				<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/scope_86/"><img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/scope_86.png" class="attachment-medium size-medium" alt="" aria-describedby="gallery-245541-3-245654" srcset="https://hackadaycom.files.wordpress.com/2017/02/scope_86.png?w=400&amp;h=276 400w, https://hackadaycom.files.wordpress.com/2017/02/scope_86.png?w=800 800w, https://hackadaycom.files.wordpress.com/2017/02/scope_86.png?w=250 250w, https://hackadaycom.files.wordpress.com/2017/02/scope_86.png?w=768 768w" sizes="(max-width: 400px) 100vw, 400px" data-attachment-id="245654" data-permalink="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/scope_86/" data-orig-file="https://hackadaycom.files.wordpress.com/2017/02/scope_86.png" data-orig-size="1024,706" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="scope_86" data-image-description="" data-medium-file="https://hackadaycom.files.wordpress.com/2017/02/scope_86.png?w=400&amp;h=276" data-large-file="https://hackadaycom.files.wordpress.com/2017/02/scope_86.png?w=800" width="400" height="276"></a>
+			</div>
+				<figcaption class="wp-caption-text gallery-caption" id="gallery-245541-3-245654">
+				Typical hand-waving.
+				</figcaption></figure>
+		</div>
+
+<p>From these scope shots you can see the desired action of the lowpass 
+filter. In the left pane, the noise from the fluorescent light, which 
+sits around 330 mV peak-to-peak, is filtered out nicely down to the 
+twenty-millivolt level. In the right pane, you can see the response as I
+ wave my hand slowly over the sensor, simulating a range of lighting 
+levels. (I have four fingers!) The value tracks the actual light level 
+reasonably quickly, although you can see some delay between the 
+unfiltered and filtered values. This is just what happens when you 
+filter!</p>
+<h4 id="op-amp-selection-again">Op-Amp Selection, Again</h4>
+<p>As opposed to the PWM application, the TL074 fails us here while the 
+LM324 shines. The TL074, among many other op-amps, is designed for use 
+with a negative voltage rail, which means that it can’t handle input 
+signals that get within a couple volts of the lowest voltage. Here, 
+where we’re using ground as the negative voltage reference, this causes 
+the amplifier to miss out on input signals below about 1.5 V as I wiggle
+ my hand up and down while covering up the sensor. The LM358 picks up 
+these changes.</p>
+<div data-carousel-extra="{&quot;blog_id&quot;:4779443,&quot;permalink&quot;:&quot;https:\/\/hackaday.com\/2017\/03\/08\/dont-fear-the-filter-lowpass-edition\/&quot;}" id="gallery-245541-4" class="gallery galleryid-245541 gallery-columns-2 gallery-size-medium"><figure class="gallery-item">
+			<div class="gallery-icon landscape">
+				<a href="https://hackaday.com/scope_93/"><img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/scope_93.png" class="attachment-medium size-medium" alt="" aria-describedby="gallery-245541-4-245656" srcset="https://hackadaycom.files.wordpress.com/2017/02/scope_93.png?w=400&amp;h=276 400w, https://hackadaycom.files.wordpress.com/2017/02/scope_93.png?w=800 800w, https://hackadaycom.files.wordpress.com/2017/02/scope_93.png?w=250 250w, https://hackadaycom.files.wordpress.com/2017/02/scope_93.png?w=768 768w" sizes="(max-width: 400px) 100vw, 400px" data-attachment-id="245656" data-permalink="https://hackaday.com/scope_93/" data-orig-file="https://hackadaycom.files.wordpress.com/2017/02/scope_93.png" data-orig-size="1024,706" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="scope_93" data-image-description="" data-medium-file="https://hackadaycom.files.wordpress.com/2017/02/scope_93.png?w=400&amp;h=276" data-large-file="https://hackadaycom.files.wordpress.com/2017/02/scope_93.png?w=800" width="400" height="276"></a>
+			</div>
+				<figcaption class="wp-caption-text gallery-caption" id="gallery-245541-4-245656">
+				TL074 Bad!
+				</figcaption></figure><figure class="gallery-item">
+			<div class="gallery-icon landscape">
+				<a href="https://hackaday.com/scope_97/"><img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/scope_97.png" class="attachment-medium size-medium" alt="" aria-describedby="gallery-245541-4-245657" srcset="https://hackadaycom.files.wordpress.com/2017/02/scope_97.png?w=400&amp;h=276 400w, https://hackadaycom.files.wordpress.com/2017/02/scope_97.png?w=800 800w, https://hackadaycom.files.wordpress.com/2017/02/scope_97.png?w=250 250w, https://hackadaycom.files.wordpress.com/2017/02/scope_97.png?w=768 768w" sizes="(max-width: 400px) 100vw, 400px" data-attachment-id="245657" data-permalink="https://hackaday.com/scope_97/" data-orig-file="https://hackadaycom.files.wordpress.com/2017/02/scope_97.png" data-orig-size="1024,706" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="scope_97" data-image-description="" data-medium-file="https://hackadaycom.files.wordpress.com/2017/02/scope_97.png?w=400&amp;h=276" data-large-file="https://hackadaycom.files.wordpress.com/2017/02/scope_97.png?w=800" width="400" height="276"></a>
+			</div>
+				<figcaption class="wp-caption-text gallery-caption" id="gallery-245541-4-245657">
+				LM324 Good
+				</figcaption></figure>
+		</div>
+
+<p>Picking op-amps for any application is full of nuances. I picked two 
+of the most standard and representative types for this demo. The TL074 
+is decently fast for an old part, which makes it good for audio, but 
+it’s designed for dual-supply use so it doesn’t cope with low voltages 
+reliably. In audio (AC) applications, you usually only use the center 
+portion of the voltage range anyway, so that’s OK. The LM324/LM358 is 
+slower, but uses less power and reaches down to the negative rail on 
+input, which makes it good for low-frequency, battery-powered, DC signal
+ conditioning. When you need <em>both</em> rail-to-rail operation and 
+high speed, and then you tack on low noise and low power consumption, 
+you’ll find yourself reading datasheets and making tradeoffs, or 
+spending money.</p>
+<h4 id="matching-to-an-adc" style="clear:none;">Matching to an ADC</h4>
+<p><a href="https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-dc1.png" target="_blank"><img data-attachment-id="245737" data-permalink="https://hackaday.com/sallen-key-lowpass-dc-2/" data-orig-file="https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-dc1.png" data-orig-size="2128,1534" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="sallen-key-lowpass-dc" data-image-description="" data-medium-file="https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-dc1.png?w=400&amp;h=288" data-large-file="https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-dc1.png?w=800" class="alignright wp-image-245737 size-medium" src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/sallen-key-lowpass-dc1.png" srcset="https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-dc1.png?w=400&amp;h=288 400w, https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-dc1.png?w=800&amp;h=576 800w, https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-dc1.png?w=250&amp;h=180 250w, https://hackadaycom.files.wordpress.com/2017/02/sallen-key-lowpass-dc1.png?w=768&amp;h=554 768w" sizes="(max-width: 400px) 100vw, 400px" width="400" height="288"></a>The
+ last detail to prepare a messy analog signal for digitalization is to 
+scale the output voltage up or down to match the voltage range of the 
+ADC. As it stands, the wire between the output and the inverting input 
+on the op-amp holds the gain at 1. It’s a simple matter of adding two 
+resistors in feedback to amplify the resulting signal, or adding a 
+voltage divider following the filter to scale the signal down. 
+Naturally, you only want to be doing one of these two.</p>
+<h2 id="whats-next" style="clear:none;">What’s Next?</h2>
+<p>If you’ve followed along this far, you’ve got a general purpose 
+lowpass filter that will handle almost all of your lowpass filtering 
+needs: it’s got a decent rolloff, is capable of working with DC- or 
+AC-coupled signals, and it’s got adjustable gain so that you can squeeze
+ the maximum precision out of your ADC. You can even tweak the response 
+type by changing the ratio of the capacitors if you want, but that’s 
+getting fancy.</p>
+<p>Next up will be three more examples of the Sallen-Key filter: a 
+highpass design just swaps the resistors and capacitors, and a very 
+useful bandpass filter can be made by cascading a highpass with a 
+lowpass. Higher-order (steeper rolloff) filters can also be made by 
+cascading these stages.</p>
+<p>(Beautiful background image in the banner from [Windytan]’s <a href="http://www.windytan.com/2013/03/rendering-pcm-with-simulated-phosphor.html" target="_blank">phosphor-effect script</a>.)</p>
+            </div><!-- .entry-content -->
+
+    <footer class="entry-footer">
+        <span class="cat-links">Posted in <a href="https://hackaday.com/category/curated/engineering/" rel="category tag">Engineering</a>, <a href="https://hackaday.com/category/hackaday-columns/" rel="category tag">Hackaday Columns</a>, <a href="https://hackaday.com/category/how-to/" rel="category tag">how-to</a>, <a href="https://hackaday.com/category/slider/" rel="category tag">Slider</a></span><span class="tags-links">Tagged <a href="https://hackaday.com/tag/analog/" rel="tag">analog</a>, <a href="https://hackaday.com/tag/filtering/" rel="tag">filtering</a>, <a href="https://hackaday.com/tag/howto/" rel="tag">howto</a>, <a href="https://hackaday.com/tag/op-amp/" rel="tag">op-amp</a>, <a href="https://hackaday.com/tag/sallen-key/" rel="tag">sallen-key</a></span><meta itemprop="url" content="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/">    </footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+            	<nav class="navigation post-navigation" role="navigation">
+		<h1 class="screen-reader-text">Post navigation</h1>
+		<div class="nav-links">
+			<div class="nav-previous"><a href="https://hackaday.com/2017/03/08/friday-hack-chat-mechanical-manufacturing/" rel="prev"><span class="meta-nav">←</span>&nbsp;Friday Hack Chat: Mechanical Manufacturing</a></div><div class="nav-next"><a href="https://hackaday.com/2017/03/08/magnetic-stir-plate-is-a-hack/" rel="next">Magnetic Stir Plate is a Hack&nbsp;<span class="meta-nav">→</span></a></div>		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	
+            <div class="content-ads-holder">
+                <script type="text/javascript">
+                    /* [id429] 300x250 */
+                    OA_show(429);
+                </script>
+            </div>
+
+            <div id="series-of-posts-box"><div class="series-group"><h3 class="one-series"><span>Read more from this series:</span><br>Don't Fear the Filter</h3><div class="one-link">			<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/" title="Don’t Fear the Filter: Lowpass Edition">Don’t Fear the Filter: Lowpass Edition</a>
+			</div><div class="one-link">			<a href="https://hackaday.com/2017/03/29/dont-fear-the-filter-cascading-sallen-keys/" title="Don’t Fear the Filter: Cascading Sallen-Keys">Don’t Fear the Filter: Cascading Sallen-Keys</a>
+			</div></div></div>
+<div id="comments" class="comments-area">
+
+    
+            <h2 class="comments-title">
+            27 thoughts on “<span>Don’t Fear the Filter: Lowpass Edition</span>”        </h2>
+
+        
+        <ol class="comment-list">
+            	<li id="comment-3441276" class="comment byuser comment-author-woodgeek even thread-even depth-1 parent  highlander-comment">
+		<article id="div-comment-3441276" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">woodgeek</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3441276">
+						<time datetime="2017-03-08T10:07:15+00:00">
+							March 8, 2017 at 10:07 am						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>That was awesome! I’m active on diyaudio.com and have been 
+contemplating making active crossovers for my speakers to use with small
+ Class D amplifiers. I appreciate the intro to filters.</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3441276"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3441276', '7fa4b92b40', 'safe-comments-result-3441276');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3441276#respond" onclick='return addComment.moveForm( "div-comment-3441276", "3441276", "respond", "245541" )' aria-label="Reply to woodgeek">Reply</a></div>		</article><!-- .comment-body -->
+	<ol class="children">
+	<li id="comment-3441341" class="comment odd alt depth-2 parent  highlander-comment">
+		<article id="div-comment-3441341" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">RÖB</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3441341">
+						<time datetime="2017-03-08T11:24:58+00:00">
+							March 8, 2017 at 11:24 am						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>The book suggested in the article would be a better resource for 
+you as audio (the human ear) is more sensitive to phase. Digital 
+circuits by the most part can completely ignore phase error.</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3441341"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3441341', '7fa4b92b40', 'safe-comments-result-3441341');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3441341#respond" onclick='return addComment.moveForm( "div-comment-3441341", "3441341", "respond", "245541" )' aria-label="Reply to RÖB">Reply</a></div>		</article><!-- .comment-body -->
+	<ol class="children">
+	<li id="comment-3441418" class="comment even depth-3   highlander-comment">
+		<article id="div-comment-3441418" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">MIke Field</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3441418">
+						<time datetime="2017-03-08T12:41:03+00:00">
+							March 8, 2017 at 12:41 pm						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>Um, Isn’t that the other way round (our ears cannot hear small 
+changes in phase). From my reading the limit is around a couple of ms of
+ group delay is inaudible in an audio system.</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3441418"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3441418', '7fa4b92b40', 'safe-comments-result-3441418');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3441418#respond" onclick='return addComment.moveForm( "div-comment-3441418", "3441418", "respond", "245541" )' aria-label="Reply to MIke Field">Reply</a></div>		</article><!-- .comment-body -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li id="comment-3441292" class="comment odd alt thread-odd thread-alt depth-1   highlander-comment">
+		<article id="div-comment-3441292" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn"><a href="http://www.afdhalatifftan.com/" rel="external nofollow" class="url">Afdhal Atiff Tan</a></b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3441292">
+						<time datetime="2017-03-08T10:21:16+00:00">
+							March 8, 2017 at 10:21 am						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>I never knew opamp can affect the filtered output tremendously. Thanks for the scopeshots!</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3441292"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3441292', '7fa4b92b40', 'safe-comments-result-3441292');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3441292#respond" onclick='return addComment.moveForm( "div-comment-3441292", "3441292", "respond", "245541" )' aria-label="Reply to Afdhal Atiff Tan">Reply</a></div>		</article><!-- .comment-body -->
+	</li><!-- #comment-## -->
+	<li id="comment-3441318" class="comment even thread-even depth-1   highlander-comment">
+		<article id="div-comment-3441318" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">Greg</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3441318">
+						<time datetime="2017-03-08T10:50:20+00:00">
+							March 8, 2017 at 10:50 am						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>Beware of slow opamps like LM358 and LM324. Their feedback loop 
+is to slow to react to square wave and their output impedance is higher 
+close to GND and VCC. If you apply strong CMOS signal from i.e. CPU, its
+ input will saturate every cycle. To avoid it increase input resistor 
+and lower the capacitor to maintain bandwidth. Or install simple lowpass
+ RC filter before active one.</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3441318"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3441318', '7fa4b92b40', 'safe-comments-result-3441318');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3441318#respond" onclick='return addComment.moveForm( "div-comment-3441318", "3441318", "respond", "245541" )' aria-label="Reply to Greg">Reply</a></div>		</article><!-- .comment-body -->
+	</li><!-- #comment-## -->
+	<li id="comment-3441376" class="comment odd alt thread-odd thread-alt depth-1 parent  highlander-comment">
+		<article id="div-comment-3441376" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">RÖB</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3441376">
+						<time datetime="2017-03-08T12:00:56+00:00">
+							March 8, 2017 at 12:00 pm						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>Having come from the analogue era, I would suggest that you don’t
+ even bother with the really old op-amps. Probably, the only reason that
+ they are manufactured and used today is because there are so many *old*
+ circuits out there that people follow because analogue design has 
+become somewhat of a lost art. </p>
+<p>Modern op-amps are thousands of times better on some metrics compared to these old chips. </p>
+<p>If you want an instrumentation amp then you want very low input 
+offset and a modern chip has 1/1000000th of the offset of some old 
+chips. </p>
+<p>If you want a sh!ty old audio amp to drive 0.25W into a 1″ beeper then use an old chip like these if you want. </p>
+<p>The op-amp side is simple. They are just an impedance buffer that has
+ two undesirable qualities  1) DC input offset which is amplified as 
+much as the desired signal and 2) a maximum slew rate (maximum 
+frequency). Just buy one that fits your requirements. </p>
+<p>There is no magic sauce in the filter. Filters are complex to analyze
+ for other forms of electronics but they are dead simple for digital 
+signal (pre-)conditioning. </p>
+<p>All you need to know – </p>
+<p>1 (simple) filter is 3dB per octave, 2 (simple) filters is 6dB per 
+octave. A simple filter is a resistor and capacitor as a divider. </p>
+<p>T=C*R, your time constant or corner frequency is simply the capacitance times the resistance. </p>
+<p>This covers *most* digital situations because in digital the blocked 
+frequency is almost certainly much much higher than the desired 
+frequency range. Things only become complex when the blocked frequency 
+is within an order or less of the desired frequency. </p>
+<p>400kHz to (or from) Audio 20kHz is more than an order (of 10) different. </p>
+<p>What you *do* need to know is the frequency components of a square wave –<br>
+Damn, I was going to link a Wikipedia page but the math there is over-complicated. </p>
+<p>In *simple* terms. For a square wave (50% duty cycle) the frequency 
+components are the original clock and a reducing proportion of each odd 
+harmonic (integer multiple). </p>
+<p>For a PWM signal that is *NOT* 50% duty cycle, you have two basic components –<br>
+A (higher) frequency of twice the period of the shorter part and a reducing proportion of each odd harmonic<br>
+AND<br>
+A (lower) frequency of twice the period of the longer part and a reducing proportion of each odd harmonic</p>
+<p>So for a 1kHz PWM at 25% duty cycle your principle components (not including harmonics) are 750Hz and 4kHz</p>
+<p>For 8 bit PWM the extremes 255/256 of clock and clock * 256</p>
+<p>long post – probably some errors – polite corrections welcome</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3441376"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3441376', '7fa4b92b40', 'safe-comments-result-3441376');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3441376#respond" onclick='return addComment.moveForm( "div-comment-3441376", "3441376", "respond", "245541" )' aria-label="Reply to RÖB">Reply</a></div>		</article><!-- .comment-body -->
+	<ol class="children">
+	<li id="comment-3441394" class="comment even depth-2   highlander-comment">
+		<article id="div-comment-3441394" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">RÖB</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3441394">
+						<time datetime="2017-03-08T12:15:12+00:00">
+							March 8, 2017 at 12:15 pm						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>Corner Frequency and Cutoff Frequency seem to be interchangeable terms now –<br>
+<a href="https://en.wikipedia.org/wiki/Cutoff_frequency" rel="nofollow" target="_blank">https://en.wikipedia.org/wiki/Cutoff_frequency</a><br>
+forget the sh!ty Wikipedia math because we want f and not w<br>
+Corner Frequency = 1/(2 * PI * R * C)</p>
+<p>Time constant<br>
+<a href="https://en.wikipedia.org/wiki/RC_time_constant" rel="nofollow" target="_blank">https://en.wikipedia.org/wiki/RC_time_constant</a><br>
+Time Constant = R * C<br>
+see how hard that was lol.</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3441394"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3441394', '7fa4b92b40', 'safe-comments-result-3441394');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3441394#respond" onclick='return addComment.moveForm( "div-comment-3441394", "3441394", "respond", "245541" )' aria-label="Reply to RÖB">Reply</a></div>		</article><!-- .comment-body -->
+	</li><!-- #comment-## -->
+	<li id="comment-3441413" class="comment odd alt depth-2   highlander-comment">
+		<article id="div-comment-3441413" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">Michael Black</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3441413">
+						<time datetime="2017-03-08T12:31:26+00:00">
+							March 8, 2017 at 12:31 pm						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>To be fair, most “old” circuits can use newer op-amps fine.  
+After the 741 they became much cleaner, no external compensation needed,
+ except for the ones that did, but a standard form.</p>
+<p>The 709 was a “hot” device for a while, but always needed external compensation, I recall a capacitor and resistor.<br>
+Earlier IC op-amps were worse, no standard compensation and maybe 
+pinouts.     I once found some uA702s  in a box of junk I brought home, 
+mid-seventies I think, and when I looked them up, they were completely 
+useless.</p>
+<p>About 1976 there was a wave of new devices like the CMOS RCA CA3140, 
+better specs but not better gain-bandwidth, soon followed by the TI 
+biCMOS op-amps which were better, but others soon were way better.</p>
+<p>But some devices are easier to get, thus they get used (or viçe 
+versa), so just like 2N3906s are still specified, 741s and 324s still 
+see use.  But using better opamps in those circuits shouldn’t  be a 
+problem, though may not show improvement in that circuit.</p>
+<p>At least the LM3900 has faded.  I’m sure it had its uses, but it was 
+grabbed mostly because it could run off a single ended supply, before 
+devices better suited for that came along.</p>
+<p>Michael</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3441413"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3441413', '7fa4b92b40', 'safe-comments-result-3441413');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3441413#respond" onclick='return addComment.moveForm( "div-comment-3441413", "3441413", "respond", "245541" )' aria-label="Reply to Michael Black">Reply</a></div>		</article><!-- .comment-body -->
+	</li><!-- #comment-## -->
+	<li id="comment-3441414" class="comment even depth-2 parent  highlander-comment">
+		<article id="div-comment-3441414" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">Valerio</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3441414">
+						<time datetime="2017-03-08T12:31:33+00:00">
+							March 8, 2017 at 12:31 pm						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>Roll-off for simple RC filter is actually 6dB/octave<br>
+<a href="https://en.wikipedia.org/wiki/Roll-off" rel="nofollow" target="_blank">https://en.wikipedia.org/wiki/Roll-off</a></p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3441414"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3441414', '7fa4b92b40', 'safe-comments-result-3441414');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3441414#respond" onclick='return addComment.moveForm( "div-comment-3441414", "3441414", "respond", "245541" )' aria-label="Reply to Valerio">Reply</a></div>		</article><!-- .comment-body -->
+	<ol class="children">
+	<li id="comment-3441754" class="comment odd alt depth-3   highlander-comment">
+		<article id="div-comment-3441754" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">RÖB</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3441754">
+						<time datetime="2017-03-08T17:47:43+00:00">
+							March 8, 2017 at 5:47 pm						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>Yep, correct. I was thinking about the 3dB points for corner or cutoff frequency. </p>
+<p>Also the 6dB per octave is actually dbV (volts) and not dBP (power). dB is most often used for power.</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3441754"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3441754', '7fa4b92b40', 'safe-comments-result-3441754');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3441754#respond" onclick='return addComment.moveForm( "div-comment-3441754", "3441754", "respond", "245541" )' aria-label="Reply to RÖB">Reply</a></div>		</article><!-- .comment-body -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li id="comment-3441519" class="comment even depth-2   highlander-comment">
+		<article id="div-comment-3441519" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">some guy</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3441519">
+						<time datetime="2017-03-08T14:07:23+00:00">
+							March 8, 2017 at 2:07 pm						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>[quote]Probably, the only reason that they are manufactured and 
+used today is because there are so many *old* circuits out there that 
+people follow because analogue design has become somewhat of a lost 
+art.[/quote]<br>
+The old op-amps are still very useful in education to show people the 
+limitations of those devices and the difference “perfect op-amp in 
+simulation” – real world. At university we had some special made boards 
+with the good old 741 for this.</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3441519"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3441519', '7fa4b92b40', 'safe-comments-result-3441519');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3441519#respond" onclick='return addComment.moveForm( "div-comment-3441519", "3441519", "respond", "245541" )' aria-label="Reply to some guy">Reply</a></div>		</article><!-- .comment-body -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li id="comment-3441459" class="comment odd alt thread-even depth-1 parent  highlander-comment">
+		<article id="div-comment-3441459" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">Mystick</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3441459">
+						<time datetime="2017-03-08T13:18:17+00:00">
+							March 8, 2017 at 1:18 pm						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>Why not passive?</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3441459"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3441459', '7fa4b92b40', 'safe-comments-result-3441459');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3441459#respond" onclick='return addComment.moveForm( "div-comment-3441459", "3441459", "respond", "245541" )' aria-label="Reply to Mystick">Reply</a></div>		</article><!-- .comment-body -->
+	<ol class="children">
+	<li id="comment-3441523" class="comment even depth-2   highlander-comment">
+		<article id="div-comment-3441523" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">reggy</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3441523">
+						<time datetime="2017-03-08T14:11:47+00:00">
+							March 8, 2017 at 2:11 pm						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>Passive filters are OK if you have a consistent driving impedance
+ and a consistent output impedance.  They also introduce loss.  But if 
+can stand some loss and have well qualified input and output Z’s passive
+ filters will do ya.  As an aside, they are also tricky to build in 
+multiple poles because of the above.  People have been known to stick op
+ amps between them just for the impedance transformation.</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3441523"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3441523', '7fa4b92b40', 'safe-comments-result-3441523');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3441523#respond" onclick='return addComment.moveForm( "div-comment-3441523", "3441523", "respond", "245541" )' aria-label="Reply to reggy">Reply</a></div>		</article><!-- .comment-body -->
+	</li><!-- #comment-## -->
+	<li id="comment-3441696" class="comment odd alt depth-2   highlander-comment">
+		<article id="div-comment-3441696" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">RÖB</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3441696">
+						<time datetime="2017-03-08T16:54:31+00:00">
+							March 8, 2017 at 4:54 pm						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>Passive filters are more of a ‘doable’ thing now for inputs on 
+many of the modern AVRs as their input impedance is in the order of 100s
+ of kOhms or even MegOhms.</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3441696"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3441696', '7fa4b92b40', 'safe-comments-result-3441696');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3441696#respond" onclick='return addComment.moveForm( "div-comment-3441696", "3441696", "respond", "245541" )' aria-label="Reply to RÖB">Reply</a></div>		</article><!-- .comment-body -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li id="comment-3441493" class="comment even thread-odd thread-alt depth-1   highlander-comment">
+		<article id="div-comment-3441493" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">Rob</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3441493">
+						<time datetime="2017-03-08T13:38:35+00:00">
+							March 8, 2017 at 1:38 pm						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>To anyone interested in filtering audio, opamps, amplifying 
+audio, etc… I can’t say enough good about Douglas Self. I recommend 
+starting with “Self on Audio” 3rd Ed (<a href="http://amzn.to/2nfUE3w" rel="nofollow" target="_blank">http://amzn.to/2nfUE3w</a>) or, if you already have intermediate aptitude, “Small Signal Audio Design” 2nd Ed (<a href="http://amzn.to/2mk9B5r" rel="nofollow" target="_blank">http://amzn.to/2mk9B5r</a>).</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3441493"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3441493', '7fa4b92b40', 'safe-comments-result-3441493');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3441493#respond" onclick='return addComment.moveForm( "div-comment-3441493", "3441493", "respond", "245541" )' aria-label="Reply to Rob">Reply</a></div>		</article><!-- .comment-body -->
+	</li><!-- #comment-## -->
+	<li id="comment-3441817" class="comment odd alt thread-even depth-1 parent  highlander-comment">
+		<article id="div-comment-3441817" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">evad</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3441817">
+						<time datetime="2017-03-08T18:52:37+00:00">
+							March 8, 2017 at 6:52 pm						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>I’ll just leave this here:<br>
+<a href="http://www.ti.com/lit/an/sloa096/sloa096.pdf" rel="nofollow" target="_blank">http://www.ti.com/lit/an/sloa096/sloa096.pdf</a></p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3441817"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3441817', '7fa4b92b40', 'safe-comments-result-3441817');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3441817#respond" onclick='return addComment.moveForm( "div-comment-3441817", "3441817", "respond", "245541" )' aria-label="Reply to evad">Reply</a></div>		</article><!-- .comment-body -->
+	<ol class="children">
+	<li id="comment-3441819" class="comment even depth-2 parent  highlander-comment">
+		<article id="div-comment-3441819" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">evad</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3441819">
+						<time datetime="2017-03-08T18:54:28+00:00">
+							March 8, 2017 at 6:54 pm						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>This one even has design worksheets for beginners…</p>
+<p><a href="http://www.ti.com/lit/an/sloa093/sloa093.pdf" rel="nofollow" target="_blank">http://www.ti.com/lit/an/sloa093/sloa093.pdf</a></p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3441819"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3441819', '7fa4b92b40', 'safe-comments-result-3441819');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3441819#respond" onclick='return addComment.moveForm( "div-comment-3441819", "3441819", "respond", "245541" )' aria-label="Reply to evad">Reply</a></div>		</article><!-- .comment-body -->
+	<ol class="children">
+	<li id="comment-3441833" class="comment odd alt depth-3   highlander-comment">
+		<article id="div-comment-3441833" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">RÖB</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3441833">
+						<time datetime="2017-03-08T19:08:03+00:00">
+							March 8, 2017 at 7:08 pm						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>What’s interesting about both of these is that they have two op-amps for a band-pass or notch filter. </p>
+<p>There is no need for a second op-amp if you can calculate the complex impedance. </p>
+<p>If you wanted, one op-amp could simultaneously be a low pass filter, high pass filter and integrator.</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3441833"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3441833', '7fa4b92b40', 'safe-comments-result-3441833');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3441833#respond" onclick='return addComment.moveForm( "div-comment-3441833", "3441833", "respond", "245541" )' aria-label="Reply to RÖB">Reply</a></div>		</article><!-- .comment-body -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li id="comment-3441884" class="comment even depth-2 parent  highlander-comment">
+		<article id="div-comment-3441884" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">Eugene</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3441884">
+						<time datetime="2017-03-08T20:01:43+00:00">
+							March 8, 2017 at 8:01 pm						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>TI has Filter Pro V3.1as a download, see <a href="https://e2e.ti.com/support/development_tools/webench_design_center/b/elabblog/archive/2010/10/29/filterpro-v3-1-available-now?keyMatch=filterpro" rel="nofollow" target="_blank">https://e2e.ti.com/support/development_tools/webench_design_center/b/elabblog/archive/2010/10/29/filterpro-v3-1-available-now?keyMatch=filterpro</a> , requires login, but well worth it!</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3441884"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3441884', '7fa4b92b40', 'safe-comments-result-3441884');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3441884#respond" onclick='return addComment.moveForm( "div-comment-3441884", "3441884", "respond", "245541" )' aria-label="Reply to Eugene">Reply</a></div>		</article><!-- .comment-body -->
+	<ol class="children">
+	<li id="comment-3444879" class="comment odd alt depth-3   highlander-comment">
+		<article id="div-comment-3444879" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">Drone</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3444879">
+						<time datetime="2017-03-10T09:02:26+00:00">
+							March 10, 2017 at 9:02 am						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>+1 The TI application does suggest minimum GBW for the selected 
+OpAmp. But there are myriad other factors involved that only experience 
+on the bench will help with.</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3444879"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3444879', '7fa4b92b40', 'safe-comments-result-3444879');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3444879#respond" onclick='return addComment.moveForm( "div-comment-3444879", "3444879", "respond", "245541" )' aria-label="Reply to Drone">Reply</a></div>		</article><!-- .comment-body -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li id="comment-3442555" class="comment even thread-odd thread-alt depth-1 parent  highlander-comment">
+		<article id="div-comment-3442555" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">Y Knot</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3442555">
+						<time datetime="2017-03-09T07:32:17+00:00">
+							March 9, 2017 at 7:32 am						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>I see lots of mentions here of old op-amps to be avoided and their many pitfalls.<br>
+How about some recommendations for modern op-amps that are widely sourced and avoid such pitfalls?</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3442555"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3442555', '7fa4b92b40', 'safe-comments-result-3442555');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3442555#respond" onclick='return addComment.moveForm( "div-comment-3442555", "3442555", "respond", "245541" )' aria-label="Reply to Y Knot">Reply</a></div>		</article><!-- .comment-body -->
+	<ol class="children">
+	<li id="comment-3443578" class="comment odd alt depth-2 parent  highlander-comment">
+		<article id="div-comment-3443578" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">RÖB</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3443578">
+						<time datetime="2017-03-09T16:15:32+00:00">
+							March 9, 2017 at 4:15 pm						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>There are so many out there that it’s probably overwhelming to find them so just google for what you want. </p>
+<p>Some Spec comparisons –<br>
+<code><br>
+   TL074, ISL28134<br>
+  8 mV  , 2.5 uV   : Offset Voltage<br>
+ 18 mV/C,  15 nV/C : Temperature Coefficient (Input Offset)<br>
+100 dB  , 135 dB   : Common Mode Rejection Ratio<br>
+  3 MHz , 3.5 MHz  : BandWidth<br>
+</code> </p>
+<p>The ISL was found by googling ultra low offset op-amp and it’s offset
+ is 3000 times lower and it’s drift is 1000 times lower. This is what 
+you want for accurate high sensitivity measurement of very small 
+signals.</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3443578"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3443578', '7fa4b92b40', 'safe-comments-result-3443578');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3443578#respond" onclick='return addComment.moveForm( "div-comment-3443578", "3443578", "respond", "245541" )' aria-label="Reply to RÖB">Reply</a></div>		</article><!-- .comment-body -->
+	<ol class="children">
+	<li id="comment-3445242" class="comment even depth-3   highlander-comment">
+		<article id="div-comment-3445242" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">evad</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3445242">
+						<time datetime="2017-03-10T19:22:25+00:00">
+							March 10, 2017 at 7:22 pm						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>TL074…</p>
+<p>With an input common mode range that doesn’t include ground.</p>
+<p>For every beginner or hobbyist, do yourself a favor and stick to rail-to-rail opamps and single-ended designs only.</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3445242"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3445242', '7fa4b92b40', 'safe-comments-result-3445242');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3445242#respond" onclick='return addComment.moveForm( "div-comment-3445242", "3445242", "respond", "245541" )' aria-label="Reply to evad">Reply</a></div>		</article><!-- .comment-body -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li id="comment-3442678" class="comment odd alt thread-even depth-1   highlander-comment">
+		<article id="div-comment-3442678" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">disturbedphaeton</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3442678">
+						<time datetime="2017-03-09T09:25:37+00:00">
+							March 9, 2017 at 9:25 am						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>i like those diagrams, could you tell me please on which software are they made?</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3442678"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3442678', '7fa4b92b40', 'safe-comments-result-3442678');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3442678#respond" onclick='return addComment.moveForm( "div-comment-3442678", "3442678", "respond", "245541" )' aria-label="Reply to disturbedphaeton">Reply</a></div>		</article><!-- .comment-body -->
+	</li><!-- #comment-## -->
+	<li id="comment-3443213" class="comment even thread-odd thread-alt depth-1 parent  highlander-comment">
+		<article id="div-comment-3443213" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">circuit guy</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3443213">
+						<time datetime="2017-03-09T13:58:31+00:00">
+							March 9, 2017 at 1:58 pm						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>I have been designing an antialiasing filter for a data 
+acquisition circuit just like this article mentions.I was going to use a
+ simple RC filter. One thing I just found out about an RC low pass 
+filter is that you don’t need a center analog ground. You can attach the
+ capacitor to battery ground or even positive  voltage. I think a high 
+pass filter you would need an analog ground but the low pass you don’t. 
+My circuit is battery powered and splitting the battery voltage would 
+add parts. I’m trying to keep the parts count down and the circuit size 
+small.</p>
+<p>How well will my design work with an RC filter attached to battery ground?</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3443213"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3443213', '7fa4b92b40', 'safe-comments-result-3443213');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3443213#respond" onclick='return addComment.moveForm( "div-comment-3443213", "3443213", "respond", "245541" )' aria-label="Reply to circuit guy">Reply</a></div>		</article><!-- .comment-body -->
+	<ol class="children">
+	<li id="comment-3443773" class="comment odd alt depth-2   highlander-comment">
+		<article id="div-comment-3443773" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">RÖB</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3443773">
+						<time datetime="2017-03-09T17:34:47+00:00">
+							March 9, 2017 at 5:34 pm						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>An anti-aliasing filter is always a low-pass filer so it intently has a DC path from sampled voltage to input. </p>
+<p>If you sampled voltage is DC and above the sampling reference ground and less then the analogue Vcc then you done. </p>
+<p>If the sampled voltage is AC then you need to create a false 
+reference or split rail voltage. This can done with a couple of 
+resistors and the circuit modified so that these resistors form part of 
+the RC network. </p>
+<p>If you were using op-amps anyway then you can use an extra op-amp to 
+the split rail reference to reduce the current consumption or even use 
+the already in-use op-amp with some trickery.</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3443773"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3443773', '7fa4b92b40', 'safe-comments-result-3443773');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3443773#respond" onclick='return addComment.moveForm( "div-comment-3443773", "3443773", "respond", "245541" )' aria-label="Reply to RÖB">Reply</a></div>		</article><!-- .comment-body -->
+	</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+	<li id="comment-3443392" class="comment even thread-even depth-1   highlander-comment">
+		<article id="div-comment-3443392" class="comment-body">
+			<footer class="comment-meta">
+				<div class="comment-author vcard">
+										<b class="fn">circuit guy</b> <span class="says">says:</span>				</div><!-- .comment-author -->
+
+				<div class="comment-metadata">
+					<a href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#comment-3443392">
+						<time datetime="2017-03-09T15:01:54+00:00">
+							March 9, 2017 at 3:01 pm						</time>
+					</a>
+									</div><!-- .comment-metadata -->
+
+							</footer><!-- .comment-meta -->
+
+			<div class="comment-content">
+				<p>one thing I like about those quad opamps is that most have standard footprints so you can try different kinds without rewiring.</p>
+			</div><!-- .comment-content -->
+			<div class="report-abuse">
+                
+			<span id="safe-comments-result-3443392"><a class="hide-if-no-js" href="javascript:void(0);" onclick="safe_report_comments_flag_comment( '3443392', '7fa4b92b40', 'safe-comments-result-3443392');">Report comment</a></span>            </div>
+			<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/?replytocom=3443392#respond" onclick='return addComment.moveForm( "div-comment-3443392", "3443392", "respond", "245541" )' aria-label="Reply to circuit guy">Reply</a></div>		</article><!-- .comment-body -->
+	</li><!-- #comment-## -->
+        </ol><!-- .comment-list -->
+
+        
+    
+    
+    	<div id="respond" class="comment-respond js">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://hackaday.com/2017/03/08/dont-fear-the-filter-lowpass-edition/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://hackaday.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+				<input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="7ec05899a5"><input type="hidden" name="_wp_http_referer" value="/2017/03/08/dont-fear-the-filter-lowpass-edition/">
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest">
+
+<div class="comment-form-field comment-textarea">
+	
+	<div id="comment-form-comment"><textarea tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px none; padding: 0px; box-sizing: content-box; overflow-wrap: break-word; height: 0px !important; min-height: 0px !important; overflow: hidden; transition: none 0s ease 0s; font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif; font-size: 14px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; text-decoration: none; word-spacing: 0px; text-indent: 0px; line-height: 20.3px; width: 778.567px;" class="autosizejs ">Enter your comment here...</textarea><textarea id="comment" name="comment" title="Enter your comment here..." placeholder="Enter your comment here..." style="height: 40px; overflow: hidden; overflow-wrap: break-word; resize: none;"></textarea></div>
+</div>
+
+<div id="comment-form-identity" style="display: none;">
+	<div id="comment-form-nascar">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="#comment-form-guest" id="postas-guest" class="nascar-signin-link" title="Login via Guest">
+									</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:WordPress.com" id="postas-wordpress" class="nascar-signin-link" title="Login via WordPress.com">
+					<svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#0087be" d="M12.158 12.786l-2.698 7.84c.806.236 1.657.365 2.54.365 1.047 0 2.05-.18 2.986-.51-.024-.037-.046-.078-.065-.123l-2.762-7.57zM3.008 12c0 3.56 2.07 6.634 5.068 8.092L3.788 8.342c-.5 1.117-.78 2.354-.78 3.658zm15.06-.454c0-1.112-.398-1.88-.74-2.48-.456-.74-.883-1.368-.883-2.11 0-.825.627-1.595 1.51-1.595.04 0 .078.006.116.008-1.598-1.464-3.73-2.36-6.07-2.36-3.14 0-5.904 1.613-7.512 4.053.21.008.41.012.58.012.94 0 2.395-.114 2.395-.114.484-.028.54.684.057.74 0 0-.487.058-1.03.086l3.275 9.74 1.968-5.902-1.4-3.838c-.485-.028-.944-.085-.944-.085-.486-.03-.43-.77.056-.742 0 0 1.484.114 2.368.114.94 0 2.397-.114 2.397-.114.486-.028.543.684.058.74 0 0-.488.058-1.03.086l3.25 9.665.897-2.997c.456-1.17.684-2.137.684-2.907zm1.82-3.86c.04.286.06.593.06.924 0 .912-.17 1.938-.683 3.22l-2.746 7.94c2.672-1.558 4.47-4.454 4.47-7.77 0-1.564-.4-3.033-1.1-4.314zM12 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"></path></g></svg>				</a>
+			</li>
+			<li>
+			</li><li>
+				<a href="#comment-form-load-service:Twitter" id="postas-twitter" class="nascar-signin-link" title="Login via Twitter">
+					<svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#1DA1F2" d="M22.23 5.924c-.736.326-1.527.547-2.357.646.847-.508 1.498-1.312 1.804-2.27-.793.47-1.67.812-2.606.996C18.325 4.498 17.258 4 16.078 4c-2.266 0-4.103 1.837-4.103 4.103 0 .322.036.635.106.935-3.41-.17-6.433-1.804-8.457-4.287-.353.607-.556 1.312-.556 2.064 0 1.424.724 2.68 1.825 3.415-.673-.022-1.305-.207-1.86-.514v.052c0 1.988 1.415 3.647 3.293 4.023-.344.095-.707.145-1.08.145-.265 0-.522-.026-.773-.074.522 1.63 2.038 2.817 3.833 2.85-1.404 1.1-3.174 1.757-5.096 1.757-.332 0-.66-.02-.98-.057 1.816 1.164 3.973 1.843 6.29 1.843 7.547 0 11.675-6.252 11.675-11.675 0-.178-.004-.355-.012-.53.802-.578 1.497-1.3 2.047-2.124z"></path></g></svg>				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Facebook" id="postas-facebook" class="nascar-signin-link" title="Login via Facebook">
+					<svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#3B5998" d="M20.007 3H3.993C3.445 3 3 3.445 3 3.993v16.013c0 .55.445.994.993.994h8.62v-6.97H10.27V11.31h2.346V9.31c0-2.325 1.42-3.59 3.494-3.59.993 0 1.847.073 2.096.106v2.43h-1.438c-1.128 0-1.346.537-1.346 1.324v1.734h2.69l-.35 2.717h-2.34V21h4.587c.548 0 .993-.445.993-.993V3.993c0-.548-.445-.993-.993-.993z"></path></g></svg>				</a>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="" alt="Gravatar" class="no-grav" width="25">
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(required)</span> <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email"></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name <span class="required">(required)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text"></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="url"></div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="" alt="WordPress.com Logo" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="">
+						<p class="comment-form-posting-as pa-wordpress">
+			<strong></strong>
+			You are commenting using your WordPress.com account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'wordpress' );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#0087be" d="M12.158 12.786l-2.698 7.84c.806.236 1.657.365 2.54.365 1.047 0 2.05-.18 2.986-.51-.024-.037-.046-.078-.065-.123l-2.762-7.57zM3.008 12c0 3.56 2.07 6.634 5.068 8.092L3.788 8.342c-.5 1.117-.78 2.354-.78 3.658zm15.06-.454c0-1.112-.398-1.88-.74-2.48-.456-.74-.883-1.368-.883-2.11 0-.825.627-1.595 1.51-1.595.04 0 .078.006.116.008-1.598-1.464-3.73-2.36-6.07-2.36-3.14 0-5.904 1.613-7.512 4.053.21.008.41.012.58.012.94 0 2.395-.114 2.395-.114.484-.028.54.684.057.74 0 0-.487.058-1.03.086l3.275 9.74 1.968-5.902-1.4-3.838c-.485-.028-.944-.085-.944-.085-.486-.03-.43-.77.056-.742 0 0 1.484.114 2.368.114.94 0 2.397-.114 2.397-.114.486-.028.543.684.058.74 0 0-.488.058-1.03.086l3.25 9.665.897-2.997c.456-1.17.684-2.137.684-2.907zm1.82-3.86c.04.286.06.593.06.924 0 .912-.17 1.938-.683 3.22l-2.746 7.94c2.672-1.558 4.47-4.454 4.47-7.77 0-1.564-.4-3.033-1.1-4.314zM12 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"></path></g></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="" alt="Google+ photo" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="">
+						<p class="comment-form-posting-as pa-googleplus">
+			<strong></strong>
+			You are commenting using your Google+ account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'googleplus' );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" x="0px" y="0px" viewBox="0 0 60 60"><path fill="#519bf7" d="M56.3,30c0,-1.6 -0.2,-3.4 -0.6,-5h-3.1H42.2H30v10.6h14.8C44,39.3 42,42 39.1,43.9l8.8,6.8C53,46 56.3,39 56.3,30z"></path><path fill="#3db366" d="M30,57.5c6.7,0 13.1,-2.4 17.9,-6.8l-8.8,-6.8c-2.5,1.6 -5.6,2.4 -9.1,2.4c-7.2,0 -13.3,-4.7 -15.4,-11.2l-9.3,7.1C9.8,51.3 19.1,57.5 30,57.5z"></path><path fill="#fdc600" d="M5.3,42.2l9.3,-7.1c-0.5,-1.6 -0.8,-3.3 -0.8,-5.1s0.3,-3.5 0.8,-5.1l-9.3,-7.1C3.5,21.5 2.5,25.6 2.5,30S3.5,38.5 5.3,42.2z"></path><path fill="#f15b44" d="M40.1,17.4l8,-8C43.3,5.1 37,2.5 30,2.5C19.1,2.5 9.8,8.7 5.3,17.8l9.3,7.1c2.1,-6.5 8.2,-11.1 15.4,-11.1C33.9,13.7 37.4,15.1 40.1,17.4z"></path></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="" alt="Twitter picture" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="">
+						<p class="comment-form-posting-as pa-twitter">
+			<strong></strong>
+			You are commenting using your Twitter account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'twitter' );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#1DA1F2" d="M22.23 5.924c-.736.326-1.527.547-2.357.646.847-.508 1.498-1.312 1.804-2.27-.793.47-1.67.812-2.606.996C18.325 4.498 17.258 4 16.078 4c-2.266 0-4.103 1.837-4.103 4.103 0 .322.036.635.106.935-3.41-.17-6.433-1.804-8.457-4.287-.353.607-.556 1.312-.556 2.064 0 1.424.724 2.68 1.825 3.415-.673-.022-1.305-.207-1.86-.514v.052c0 1.988 1.415 3.647 3.293 4.023-.344.095-.707.145-1.08.145-.265 0-.522-.026-.773-.074.522 1.63 2.038 2.817 3.833 2.85-1.404 1.1-3.174 1.757-5.096 1.757-.332 0-.66-.02-.98-.057 1.816 1.164 3.973 1.843 6.29 1.843 7.547 0 11.675-6.252 11.675-11.675 0-.178-.004-.355-.012-.53.802-.578 1.497-1.3 2.047-2.124z"></path></g></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="" alt="Facebook photo" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="">
+						<p class="comment-form-posting-as pa-facebook">
+			<strong></strong>
+			You are commenting using your Facebook account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'facebook' );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#3B5998" d="M20.007 3H3.993C3.445 3 3 3.445 3 3.993v16.013c0 .55.445.994.993.994h8.62v-6.97H10.27V11.31h2.346V9.31c0-2.325 1.42-3.59 3.494-3.59.993 0 1.847.073 2.096.106v2.43h-1.438c-1.128 0-1.346.537-1.346 1.324v1.734h2.69l-.35 2.717h-2.34V21h4.587c.548 0 .993-.445.993-.993V3.993c0-.548-.445-.993-.993-.993z"></path></g></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe" style="display: none;">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;"> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of new comments via email.</label></p><p class="post-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog" style="display: inline;">Notify me of new posts via email.</label></p></div>
+
+
+
+
+<p class="form-submit" style="display: none;"><input name="submit" type="submit" id="comment-submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="245541" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="05abb71fc8"></p>
+<input type="hidden" name="genseq" value="1547224408">
+<p style="display: none;"></p>			<input type="hidden" id="ak_js" name="ak_js" value="1547224408262"></form>
+			</div><!-- #respond -->
+	<div style="clear: both"></div><p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
+</div><!-- #comments -->
+
+        
+        </main><!-- #main -->
+    </div><!-- #primary -->
+
+
+<div id="secondary" class="widget-area" role="complementary">
+
+    <div class="sidebar-ads-holder">
+        <script type="text/javascript">
+            /* [id466] 300x250 */
+            OA_show(428);
+        </script>
+    </div>
+
+    <!-- store ad -->
+    <iframe class="sidebar-store-ad" scrolling="no" marginwidth="0" marginheight="0" src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/search%20term.html" frameborder="0" align="top"></iframe>
+
+    <aside id="search-2" class="widget widget_search"><h1 class="widget-title">Search</h1><form role="search" method="get" class="search-form" action="https://hackaday.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search …" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			</form></aside><aside id="hackadayfollowus-2" class="widget widget-follow-us"><h1 class="widget-title">Never miss a hack</h1>
+			<a href="https://www.facebook.com/pages/Hack-a-Day/136115233068429" target="_blank" class="icon-social icon-facebook">Follow on facebook</a>
+			<a href="https://plus.google.com/+hackaday/posts" target="_blank" class="icon-social icon-plusone">Follow on google+</a>
+			<a href="https://twitter.com/hackaday" target="_blank" class="icon-social icon-twitter">Follow on twitter</a>
+			<a href="https://www.youtube.com/user/hackaday" target="_blank" class="icon-social icon-youtube">Follow on youtube</a>
+			<a href="https://hackaday.com/blog/feed/" target="_blank" class="icon-social icon-rss">Follow on rss</a>
+			<a href="mailto:tips@hackaday.com" class="icon-social icon-contact">Contact us</a>
+		</aside><aside id="hackadaysubscribe-3" class="widget widget-had-subscribe"><h1 class="widget-title">Subscribe</h1>
+            <form role="subscribe" action="//hackaday.us9.list-manage.com/subscribe/post?u=dfadb71b0b15629cef5abf016&amp;id=f37880df9f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="subscribe-form validate" target="_blank" novalidate="">
+                <div id="mc_embed_signup_scroll">
+                <label for="mce-EMAIL">
+                    <input type="email" name="EMAIL" class="subscribe-field" placeholder="Enter Email Address" id="mce-EMAIL" required="">
+                </label>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;"><input type="text" name="b_dfadb71b0b15629cef5abf016_f37880df9f" tabindex="-1"></div>
+                <input type="submit" class="subscribe-submit" id="mc-embedded-subscribe" value="Subscribe">
+                </div>
+            </form>
+		</aside><aside id="hackadayrecentposts-2" class="widget widget-recent-posts"><h1 class="widget-title">If you missed it</h1>
+	<ul>
+			<li>
+			<a href="https://hackaday.com/2019/01/09/three-dimensions-what-does-that-really-mean/" class="recent-image">
+						<img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/3d-displays-thumbnail.jpg" alt="" srcset="https://hackadaycom.files.wordpress.com/2018/11/3d-displays-thumbnail.jpg?w=110&amp;h=110&amp;zoom=2 1.5x" src-orig="https://hackadaycom.files.wordpress.com/2018/11/3d-displays-thumbnail.jpg?w=300&amp;h=300" scale="1.5" width="110" height="110">
+			</a>
+			<div class="entry-intro">
+				<h2>
+					<a href="https://hackaday.com/2019/01/09/three-dimensions-what-does-that-really-mean/">Three Dimensions: What Does That Really Mean?</a>
+				</h2>
+				<a href="https://hackaday.com/2019/01/09/three-dimensions-what-does-that-really-mean//#comments" class="comment-link">
+					<span class="icon-hackaday icon-hackaday-comment"></span> 42 Comments				</a>
+			</div>
+		</li>
+			<li>
+			<a href="https://hackaday.com/2019/01/08/goodbye-chevy-volt-the-perfect-car-for-a-future-that-never-was/" class="recent-image">
+						<img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/2012-Volt-600x600.jpg" alt="" srcset="https://hackadaycom.files.wordpress.com/2018/12/2012-Volt-600x600.jpg?w=110&amp;h=110&amp;zoom=2 1.5x" src-orig="https://hackadaycom.files.wordpress.com/2018/12/2012-Volt-600x600.jpg?w=300&amp;h=300" scale="1.5" width="110" height="110">
+			</a>
+			<div class="entry-intro">
+				<h2>
+					<a href="https://hackaday.com/2019/01/08/goodbye-chevy-volt-the-perfect-car-for-a-future-that-never-was/">Goodbye Chevy Volt, The Perfect Car For A Future That Never Was</a>
+				</h2>
+				<a href="https://hackaday.com/2019/01/08/goodbye-chevy-volt-the-perfect-car-for-a-future-that-never-was//#comments" class="comment-link">
+					<span class="icon-hackaday icon-hackaday-comment"></span> 146 Comments				</a>
+			</div>
+		</li>
+			<li>
+			<a href="https://hackaday.com/2019/01/07/the-age-of-hypersonic-weapons-has-begun/" class="recent-image">
+						<img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/hypersonic-thumb.jpg" alt="" srcset="https://hackadaycom.files.wordpress.com/2019/01/hypersonic-thumb.jpg?w=110&amp;h=110&amp;zoom=2 1.5x" src-orig="https://hackadaycom.files.wordpress.com/2019/01/hypersonic-thumb.jpg?w=300&amp;h=300" scale="1.5" width="110" height="110">
+			</a>
+			<div class="entry-intro">
+				<h2>
+					<a href="https://hackaday.com/2019/01/07/the-age-of-hypersonic-weapons-has-begun/">The Age of Hypersonic Weapons has Begun</a>
+				</h2>
+				<a href="https://hackaday.com/2019/01/07/the-age-of-hypersonic-weapons-has-begun//#comments" class="comment-link">
+					<span class="icon-hackaday icon-hackaday-comment"></span> 178 Comments				</a>
+			</div>
+		</li>
+			<li>
+			<a href="https://hackaday.com/2019/01/04/finding-the-goldilocks-cell-module/" class="recent-image">
+						<img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/cellmodule_thumbnail.png" alt="" srcset="https://hackadaycom.files.wordpress.com/2019/01/cellmodule_thumbnail.png?w=110&amp;h=110&amp;zoom=2 1.5x" src-orig="https://hackadaycom.files.wordpress.com/2019/01/cellmodule_thumbnail.png?w=300&amp;h=300" scale="1.5" width="110" height="110">
+			</a>
+			<div class="entry-intro">
+				<h2>
+					<a href="https://hackaday.com/2019/01/04/finding-the-goldilocks-cell-module/">Finding the Goldilocks Cell Module</a>
+				</h2>
+				<a href="https://hackaday.com/2019/01/04/finding-the-goldilocks-cell-module//#comments" class="comment-link">
+					<span class="icon-hackaday icon-hackaday-comment"></span> 28 Comments				</a>
+			</div>
+		</li>
+			<li>
+			<a href="https://hackaday.com/2019/01/04/why-converting-classic-cars-to-electric-drive-is-a-thing/" class="recent-image">
+						<img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/sqr-15.jpg" alt="" srcset="https://hackadaycom.files.wordpress.com/2018/12/sqr-15.jpg?w=110&amp;h=110&amp;zoom=2 1.5x" src-orig="https://hackadaycom.files.wordpress.com/2018/12/sqr-15.jpg?w=300&amp;h=300" scale="1.5" width="110" height="110">
+			</a>
+			<div class="entry-intro">
+				<h2>
+					<a href="https://hackaday.com/2019/01/04/why-converting-classic-cars-to-electric-drive-is-a-thing/">Why Converting Classic Cars to Electric Drive Is A Thing</a>
+				</h2>
+				<a href="https://hackaday.com/2019/01/04/why-converting-classic-cars-to-electric-drive-is-a-thing//#comments" class="comment-link">
+					<span class="icon-hackaday icon-hackaday-comment"></span> 93 Comments				</a>
+			</div>
+		</li>
+		</ul>
+	<a href="https://hackaday.com/category/featured/">More from this category</a>
+	</aside><aside id="categories-2" class="widget widget_categories"><h1 class="widget-title">Categories</h1><form action="https://hackaday.com" method="get"><label class="screen-reader-text" for="cat">Categories</label><select name="cat" id="cat" class="postform">
+	<option value="-1" selected="selected">Select Category</option>
+	<option class="level-0" value="114554125">3d Printer hacks</option>
+	<option class="level-0" value="18020710">Android Hacks</option>
+	<option class="level-0" value="18020705">Arduino Hacks</option>
+	<option class="level-0" value="27981650">ARM</option>
+	<option class="level-0" value="422579952">Art</option>
+	<option class="level-0" value="422573560">Ask Hackaday</option>
+	<option class="level-0" value="64298109">ATtiny Hacks</option>
+	<option class="level-0" value="25122024">Beer Hacks</option>
+	<option class="level-0" value="422577767">Biography</option>
+	<option class="level-0" value="12115263">blackberry hacks</option>
+	<option class="level-0" value="422570206">Business</option>
+	<option class="level-0" value="422573558">car hacks</option>
+	<option class="level-0" value="11894719">Cellphone Hacks</option>
+	<option class="level-0" value="35745764">chemistry hacks</option>
+	<option class="level-0" value="422573559">classic hacks</option>
+	<option class="level-0" value="31677810">clock hacks</option>
+	<option class="level-0" value="18755632">cnc hacks</option>
+	<option class="level-0" value="568165">computer hacks</option>
+	<option class="level-0" value="422573570">cons</option>
+	<option class="level-0" value="5738">contests</option>
+	<option class="level-0" value="422573551">cooking hacks</option>
+	<option class="level-0" value="2588813">Crowd Funding</option>
+	<option class="level-0" value="421976847">Curated</option>
+	<option class="level-0" value="422570209">Current Events</option>
+	<option class="level-0" value="10969032">digital audio hacks</option>
+	<option class="level-0" value="10969033">digital cameras hacks</option>
+	<option class="level-0" value="10969034">downloads hacks</option>
+	<option class="level-0" value="107827385">drone hacks</option>
+	<option class="level-0" value="63176382">Engine Hacks</option>
+	<option class="level-0" value="422570207">Engineering</option>
+	<option class="level-0" value="212825112">Fail of the Week</option>
+	<option class="level-0" value="35890">Featured</option>
+	<option class="level-0" value="422570208">Fiction</option>
+	<option class="level-0" value="551890">firefox hacks</option>
+	<option class="level-0" value="53446541">FPGA</option>
+	<option class="level-0" value="18020562">g1 hacks</option>
+	<option class="level-0" value="422578065">Games</option>
+	<option class="level-0" value="320557">google hacks</option>
+	<option class="level-0" value="10969036">gps hacks</option>
+	<option class="level-0" value="24535490">green hacks</option>
+	<option class="level-0" value="190105353">Hackaday Columns</option>
+	<option class="level-0" value="27311668">Hackaday links</option>
+	<option class="level-0" value="289711781">Hackaday Store</option>
+	<option class="level-0" value="21755374">Hackerspaces</option>
+	<option class="level-0" value="422573553">HackIt</option>
+	<option class="level-0" value="10969037">handhelds hacks</option>
+	<option class="level-0" value="422573549">hardware</option>
+	<option class="level-0" value="421979219">History</option>
+	<option class="level-0" value="66307084">Holiday Hacks</option>
+	<option class="level-0" value="10969038">home entertainment hacks</option>
+	<option class="level-0" value="5660882">home hacks</option>
+	<option class="level-0" value="422573566">how-to</option>
+	<option class="level-0" value="422570204">Interest</option>
+	<option class="level-0" value="908478">internet hacks</option>
+	<option class="level-0" value="831">Interviews</option>
+	<option class="level-0" value="1416772">iphone hacks</option>
+	<option class="level-0" value="1275163">ipod hacks</option>
+	<option class="level-0" value="4157506">Kindle hacks</option>
+	<option class="level-0" value="46717088">Kinect hacks</option>
+	<option class="level-0" value="10969048">laptops hacks</option>
+	<option class="level-0" value="422573554">Laser Hacks</option>
+	<option class="level-0" value="422573557">LED Hacks</option>
+	<option class="level-0" value="422573568">Lifehacks</option>
+	<option class="level-0" value="729674">Linux Hacks</option>
+	<option class="level-0" value="20732807">lockpicking hacks</option>
+	<option class="level-0" value="10969060">Mac Hacks</option>
+	<option class="level-0" value="422573573">Major Tom</option>
+	<option class="level-0" value="11284667">Medical Hacks</option>
+	<option class="level-0" value="139916">Microcontrollers</option>
+	<option class="level-0" value="5611793">Misc Hacks</option>
+	<option class="level-0" value="18020730">Multitouch Hacks</option>
+	<option class="level-0" value="22652725">Musical Hacks</option>
+	<option class="level-0" value="18020722">Netbook Hacks</option>
+	<option class="level-0" value="6166512">Network Hacks</option>
+	<option class="level-0" value="103">News</option>
+	<option class="level-0" value="1861880">Nintendo DS Hacks</option>
+	<option class="level-0" value="114555425">Nintendo Game Boy Hacks</option>
+	<option class="level-0" value="18020685">Nintendo Hacks</option>
+	<option class="level-0" value="422573552">Nintendo Wii Hacks</option>
+	<option class="level-0" value="118011206">Nook Hacks</option>
+	<option class="level-0" value="422570205">Original Art</option>
+	<option class="level-0" value="114556430">Palm Pre Hacks</option>
+	<option class="level-0" value="422573571">Parts</option>
+	<option class="level-0" value="10969081">Peripherals Hacks</option>
+	<option class="level-0" value="16325149">Phone Hacks</option>
+	<option class="level-0" value="10969088">Playstation Hacks</option>
+	<option class="level-0" value="2060">Podcasts</option>
+	<option class="level-0" value="10969096">Portable Audio Hacks</option>
+	<option class="level-0" value="10969099">Portable Video Hacks</option>
+	<option class="level-0" value="588444">PSP Hacks</option>
+	<option class="level-0" value="23971578">Radio Hacks</option>
+	<option class="level-0" value="47">Rants</option>
+	<option class="level-0" value="69218551">Raspberry Pi</option>
+	<option class="level-0" value="21870780">Repair Hacks</option>
+	<option class="level-0" value="422578063">Retrocomputing</option>
+	<option class="level-0" value="212824350">Retrotechtacular</option>
+	<option class="level-0" value="422573565">Reviews</option>
+	<option class="level-0" value="10969101">Robots Hacks</option>
+	<option class="level-0" value="422573563">Roundup</option>
+	<option class="level-0" value="422578013">Science</option>
+	<option class="level-0" value="10969111">Security Hacks</option>
+	<option class="level-0" value="422570203">Skills</option>
+	<option class="level-0" value="422573572">Slider</option>
+	<option class="level-0" value="2301">Software Development</option>
+	<option class="level-0" value="3796421">Software Hacks</option>
+	<option class="level-0" value="10969116">Solar Hacks</option>
+	<option class="level-0" value="422577709">Space</option>
+	<option class="level-0" value="10969121">Tablet Hacks</option>
+	<option class="level-0" value="3075183">Teardown</option>
+	<option class="level-0" value="12936984">Tech Hacks</option>
+	<option class="level-0" value="227104736">The Hackaday Prize</option>
+	<option class="level-0" value="10969130">Tool Hacks</option>
+	<option class="level-0" value="25277004">Toy Hacks</option>
+	<option class="level-0" value="10969134">Transportation Hacks</option>
+	<option class="level-0" value="1">Uncategorized</option>
+	<option class="level-0" value="422573556">Video Hacks</option>
+	<option class="level-0" value="34942364">Virtual Reality</option>
+	<option class="level-0" value="50802420">Weapons Hacks</option>
+	<option class="level-0" value="12552193">Wearable Hacks</option>
+	<option class="level-0" value="39510952">Weekly Roundup</option>
+	<option class="level-0" value="4891215">Wireless Hacks</option>
+	<option class="level-0" value="7079455">Xbox Hacks</option>
+</select>
+</form>
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "cat" );
+	function onCatChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+			dropdown.parentNode.submit();
+		}
+	}
+	dropdown.onchange = onCatChange;
+})();
+/* ]]> */
+</script>
+
+			</aside><aside id="hackadayrecentposts-3" class="widget widget-recent-posts"><h1 class="widget-title">Our Columns</h1>
+	<ul>
+			<li>
+			<a href="https://hackaday.com/2019/01/11/ask-hackaday-help-me-pick-a-cad-package/" class="recent-image">
+						<img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/cad-thumb.jpg" alt="" srcset="https://hackadaycom.files.wordpress.com/2019/01/cad-thumb.jpg?w=110&amp;h=110&amp;zoom=2 1.5x" src-orig="https://hackadaycom.files.wordpress.com/2019/01/cad-thumb.jpg?w=300&amp;h=300" scale="1.5" width="110" height="110">
+			</a>
+			<div class="entry-intro">
+				<h2>
+					<a href="https://hackaday.com/2019/01/11/ask-hackaday-help-me-pick-a-cad-package/">Ask Hackaday: Help Me Pick A CAD Package</a>
+				</h2>
+				<a href="https://hackaday.com/2019/01/11/ask-hackaday-help-me-pick-a-cad-package//#comments" class="comment-link">
+					<span class="icon-hackaday icon-hackaday-comment"></span> 31 Comments				</a>
+			</div>
+		</li>
+			<li>
+			<a href="https://hackaday.com/2019/01/10/automating-a-candle-factory-michale-schuldts-adventures-in-manufacturing-automation/" class="recent-image">
+						<img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/michael-schuldt-thumbnail.jpg" alt="" srcset="https://hackadaycom.files.wordpress.com/2019/01/michael-schuldt-thumbnail.jpg?w=110&amp;h=110&amp;zoom=2 1.5x" src-orig="https://hackadaycom.files.wordpress.com/2019/01/michael-schuldt-thumbnail.jpg?w=300&amp;h=300" scale="1.5" width="110" height="110">
+			</a>
+			<div class="entry-intro">
+				<h2>
+					<a href="https://hackaday.com/2019/01/10/automating-a-candle-factory-michale-schuldts-adventures-in-manufacturing-automation/">Adventures in Automating a Candle Factory</a>
+				</h2>
+				<a href="https://hackaday.com/2019/01/10/automating-a-candle-factory-michale-schuldts-adventures-in-manufacturing-automation//#comments" class="comment-link">
+					<span class="icon-hackaday icon-hackaday-comment"></span> 26 Comments				</a>
+			</div>
+		</li>
+			<li>
+			<a href="https://hackaday.com/2019/01/10/35c3-biggest-communication-congress-yet-little-chaos/" class="recent-image">
+						<img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/34c3_thumbnail.png" alt="" srcset="https://hackadaycom.files.wordpress.com/2019/01/34c3_thumbnail.png?w=110&amp;h=110&amp;zoom=2 1.5x" src-orig="https://hackadaycom.files.wordpress.com/2019/01/34c3_thumbnail.png?w=300&amp;h=300" scale="1.5" width="110" height="110">
+			</a>
+			<div class="entry-intro">
+				<h2>
+					<a href="https://hackaday.com/2019/01/10/35c3-biggest-communication-congress-yet-little-chaos/">35C3: Biggest Communication Congress, Yet Little Chaos</a>
+				</h2>
+				<a href="https://hackaday.com/2019/01/10/35c3-biggest-communication-congress-yet-little-chaos//#comments" class="comment-link">
+					<span class="icon-hackaday icon-hackaday-comment"></span> 4 Comments				</a>
+			</div>
+		</li>
+			<li>
+			<a href="https://hackaday.com/2019/01/10/linux-fu-the-kitchen-sync/" class="recent-image">
+						<img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/linuxfu_thumbnail.png" alt="" srcset="https://hackadaycom.files.wordpress.com/2018/06/linuxfu_thumbnail.png?w=110&amp;h=110&amp;zoom=2 1.5x" src-orig="https://hackadaycom.files.wordpress.com/2018/06/linuxfu_thumbnail.png?w=300&amp;h=300" scale="1.5" width="110" height="110">
+			</a>
+			<div class="entry-intro">
+				<h2>
+					<a href="https://hackaday.com/2019/01/10/linux-fu-the-kitchen-sync/">Linux Fu: The Kitchen Sync</a>
+				</h2>
+				<a href="https://hackaday.com/2019/01/10/linux-fu-the-kitchen-sync//#comments" class="comment-link">
+					<span class="icon-hackaday icon-hackaday-comment"></span> 11 Comments				</a>
+			</div>
+		</li>
+			<li>
+			<a href="https://hackaday.com/2019/01/09/morse-code-keyboard-1939-style/" class="recent-image">
+						<img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/mor600.png" alt="" srcset="https://hackadaycom.files.wordpress.com/2018/11/mor600.png?w=110&amp;h=110&amp;zoom=2 1.5x" src-orig="https://hackadaycom.files.wordpress.com/2018/11/mor600.png?w=300&amp;h=300" scale="1.5" width="110" height="110">
+			</a>
+			<div class="entry-intro">
+				<h2>
+					<a href="https://hackaday.com/2019/01/09/morse-code-keyboard-1939-style/">Morse Code Keyboard 1939 Style!</a>
+				</h2>
+				<a href="https://hackaday.com/2019/01/09/morse-code-keyboard-1939-style//#comments" class="comment-link">
+					<span class="icon-hackaday icon-hackaday-comment"></span> 25 Comments				</a>
+			</div>
+		</li>
+		</ul>
+	<a href="https://hackaday.com/category/hackaday-columns/">More from this category</a>
+	</aside><aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent comments</h1>				<ul id="recentcomments">
+											<li class="recentcomments">
+							Shoe on <a href="https://hackaday.com/2019/01/11/ask-hackaday-help-me-pick-a-cad-package/#comment-5771613">Ask Hackaday: Help Me Pick A CAD Package</a>						</li>
+
+												<li class="recentcomments">
+							<a href="http://eternityforest.wordpress.com/" rel="external nofollow" class="url">eternityforest</a> on <a href="https://hackaday.com/2019/01/10/program-this-badge-in-lisp/#comment-5771601">Program This Badge in Lisp</a>						</li>
+
+												<li class="recentcomments">
+							Ostracus on <a href="https://hackaday.com/2019/01/11/ask-hackaday-help-me-pick-a-cad-package/#comment-5771556">Ask Hackaday: Help Me Pick A CAD Package</a>						</li>
+
+												<li class="recentcomments">
+							<a href="http://wyolum.com/the-wyolum-team/" rel="external nofollow" class="url">Anool Mahidharia</a> on <a href="https://hackaday.com/2019/01/11/ask-hackaday-help-me-pick-a-cad-package/#comment-5771519">Ask Hackaday: Help Me Pick A CAD Package</a>						</li>
+
+												<li class="recentcomments">
+							Tom on <a href="https://hackaday.com/2019/01/11/ask-hackaday-help-me-pick-a-cad-package/#comment-5771518">Ask Hackaday: Help Me Pick A CAD Package</a>						</li>
+
+												<li class="recentcomments">
+							<a href="http://eternityforest.wordpress.com/" rel="external nofollow" class="url">eternityforest</a> on <a href="https://hackaday.com/2019/01/11/ask-hackaday-help-me-pick-a-cad-package/#comment-5771514">Ask Hackaday: Help Me Pick A CAD Package</a>						</li>
+
+												<li class="recentcomments">
+							Tom on <a href="https://hackaday.com/2019/01/11/ask-hackaday-help-me-pick-a-cad-package/#comment-5771508">Ask Hackaday: Help Me Pick A CAD Package</a>						</li>
+
+												<li class="recentcomments">
+							<a href="http://twitter.com/BodyByEstrogen" rel="external nofollow" class="url">Gwendolyn the first (@BodyByEstrogen)</a> on <a href="https://hackaday.com/2019/01/11/ask-hackaday-help-me-pick-a-cad-package/#comment-5771496">Ask Hackaday: Help Me Pick A CAD Package</a>						</li>
+
+												<li class="recentcomments">
+							RoboMonkey on <a href="https://hackaday.com/2019/01/08/goodbye-chevy-volt-the-perfect-car-for-a-future-that-never-was/#comment-5771456">Goodbye Chevy Volt, The Perfect Car For A Future That Never Was</a>						</li>
+
+												<li class="recentcomments">
+							george on <a href="https://hackaday.com/2019/01/08/goodbye-chevy-volt-the-perfect-car-for-a-future-that-never-was/#comment-5771437">Goodbye Chevy Volt, The Perfect Car For A Future That Never Was</a>						</li>
+
+										</ul>
+				</aside><aside id="hackadayfeed-2" class="widget widget-hackaday-feed"><h1 class="widget-title">Now on Hackaday.io</h1>
+			<ul>
+									<li><a href="http://www.hackaday.io/project/163228-addressable-7-segment-displays/discussion-119087">hamblin.joe wrote a comment on Addressable 7-Segment Displays.</a></li>
+										<li><a href="http://www.hackaday.io/project/163132-ski-boots-heating-system">Robert Perry liked Ski boots heating system.</a></li>
+										<li><a href="http://www.hackaday.io/project/163228-addressable-7-segment-displays">hamblin.joe liked Addressable 7-Segment Displays.</a></li>
+										<li><a href="http://www.hackaday.io/project/163273-attiny85-prototyping-board/discussion-119086">Dan Maloney wrote a comment on ATtiny85 Prototyping Board.</a></li>
+										<li><a href="http://www.hackaday.io/project/158814-fpga-chat/discussion-119085">Sophi Kravitz wrote a reply on FPGA chat.</a></li>
+										<li><a href="http://www.hackaday.io/project/162813-not-a-hack">Sophi Kravitz liked Not A Hack.</a></li>
+										<li><a href="http://www.hackaday.io/project/163274-4-bit-full-hex-decoder/discussion-119084">Dan Maloney wrote a comment on 4-Bit Full Hex Decoder.</a></li>
+										<li><a href="http://www.hackaday.io/project/20781-gigatron-ttl-microcomputer">iliketoredstonesometimes liked Gigatron TTL microcomputer.</a></li>
+										<li><a href="http://www.hackaday.io/project/27392-stupid-computer">iliketoredstonesometimes liked STUPID Computer.</a></li>
+										<li><a href="http://www.hackaday.io/project/159568-portal-point-generator">jorge.daetz liked  Portal Point Generator.</a></li>
+						</ul>
+	</aside>
+    <div class="sidebar-ads-holder">
+        <script type="text/javascript">
+            /* [id465] 160x600 */
+            OA_show(427);
+        </script>
+    </div>
+
+</div><!-- #secondary -->
+
+    </div><!-- #content -->
+
+</div><!-- #page -->
+
+<footer id="colophon" class="site-footer" role="contentinfo">
+    <div id="footer" class="site-footer-container">
+
+        <a href="https://hackaday.com/" rel="home">
+            <img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/logo.png" alt="Logo" class="logo-img" scale="0">
+        </a>
+
+        <div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-141410" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-141410"><a href="https://hackaday.com/">Home</a></li>
+<li id="menu-item-141411" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-141411"><a href="https://hackaday.com/blog/">Blog</a></li>
+<li id="menu-item-141412" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-141412"><a href="http://hackaday.io/">Hackaday.io</a></li>
+<li id="menu-item-141413" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-141413"><a href="https://www.tindie.com/?utm_source=hackaday&amp;utm_medium=link&amp;utm_campaign=fromstore">Store</a></li>
+<li id="menu-item-141414" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-141414"><a title="Build Something that Matters" href="http://hackaday.io/prize">Hackaday Prize</a></li>
+<li id="menu-item-152823" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-152823"><a href="http://www.youtube.com/user/hackaday/videos">Video</a></li>
+<li id="menu-item-141415" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-141415"><a href="https://hackaday.com/submit-a-tip/">Submit a tip</a></li>
+<li id="menu-item-141417" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-141417"><a href="https://hackadaycom.wordpress.com/about/">About</a></li>
+<li id="menu-item-141418" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-141418"><a href="https://hackaday.com/contact-us/">Contact us</a></li>
+</ul></div>
+        <aside id="hackadayfollowus-3" class="widget widget-follow-us"><h1 class="footer-widget-title">Never miss a hack</h1>
+			<a href="https://www.facebook.com/pages/Hack-a-Day/136115233068429" target="_blank" class="icon-social icon-facebook">Follow on facebook</a>
+			<a href="https://plus.google.com/+hackaday/posts" target="_blank" class="icon-social icon-plusone">Follow on google+</a>
+			<a href="https://twitter.com/hackaday" target="_blank" class="icon-social icon-twitter">Follow on twitter</a>
+			<a href="https://www.youtube.com/user/hackaday" target="_blank" class="icon-social icon-youtube">Follow on youtube</a>
+			<a href="https://hackaday.com/blog/feed/" target="_blank" class="icon-social icon-rss">Follow on rss</a>
+			<a href="mailto:tips@hackaday.com" class="icon-social icon-contact">Contact us</a>
+		</aside><aside id="hackadaysubscribe-2" class="widget widget-had-subscribe"><h1 class="footer-widget-title">Subscribe to Newsletter</h1>
+            <form role="subscribe" action="//hackaday.us9.list-manage.com/subscribe/post?u=dfadb71b0b15629cef5abf016&amp;id=f37880df9f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="subscribe-form validate" target="_blank" novalidate="">
+                <div id="mc_embed_signup_scroll">
+                <label for="mce-EMAIL">
+                    <input type="email" name="EMAIL" class="subscribe-field" placeholder="Enter Email Address" id="mce-EMAIL" required="">
+                </label>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;"><input type="text" name="b_dfadb71b0b15629cef5abf016_f37880df9f" tabindex="-1"></div>
+                <input type="submit" class="subscribe-submit" id="mc-embedded-subscribe" value="Subscribe">
+                </div>
+            </form>
+		</aside>
+        <div class="site-info">
+            Copyright © 2019            <span class="sep"> | </span>
+            <strong>Hackaday, Hack A Day, and the Skull and Wrenches Logo are Trademarks of Hackaday.com</strong>
+            <span class="sep"> | </span>
+            <a href="https://supplyframe.com/company/privacy" target="_blank">Privacy Policy</a>
+            <span class="sep"> | </span>
+            <a href="https://supplyframe.com/company/terms" target="_blank">Terms of Service</a>
+            <br>Powered by <a href="https://vip.wordpress.com/?utm_source=vip_powered_wpcom&amp;utm_medium=web&amp;utm_campaign=VIP%20Footer%20Credit&amp;utm_term=hackaday.com" rel="generator nofollow" class="powered-by-wpcom">WordPress.com VIP</a>        </div><!-- .site-info -->
+
+    </div>
+</footer><!-- #colophon -->
+
+<img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/impression" id="hdTrack" class="trackImg" style="display: none !important;" hidden=""><script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-42734042-1', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+</script>
+
+<!-- wpcom_wp_footer -->
+
+			<div class="cookie-notifications" style="display: block;">
+				<div class="container">
+					<div class="close cookie-notifications-btn"><img src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/close.png" style="width:16px;height:16px;" scale="0"></div>
+					<p>
+						By using our website and services, you expressly agree to the 
+placement of our performance, functionality and advertising cookies. <a target="_blank" href="https://hackaday.io/privacy-policy">Learn more</a> 
+						<button class="accept cookie-notifications-btn">Accept</button>
+					</p>
+				</div>
+			</div>
+		
+			<div style="display:none">
+	</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"https:\/\/hackadaycom.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/hackadaycom.wordpress.com\/wp-login.php?action=logout&_wpnonce=e4627ec137","homeURL":"https:\/\/hackaday.com\/","postID":"245541","gravDefault":"mystery","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"","userIsLoggedIn":"","isJetpack":"","text_direction":"ltr"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/a_002.js"></script>
+
+	<div id="carousel-reblog-box">
+		<form action="#" name="carousel-reblog">
+			<textarea id="carousel-reblog-content" name="carousel-reblog-content" placeholder="Add your thoughts here... (optional)"></textarea>
+			<label for="carousel-reblog-to-blog-id" id="carousel-reblog-lblogid">Post to</label>
+			<select name="carousel-reblog-to-blog-id" id="carousel-reblog-to-blog-id">
+						</select>
+
+			<div class="submit">
+				<span class="canceltext"><a href="#" class="cancel">Cancel</a></span>
+				<input type="submit" name="carousel-reblog-submit" class="button" id="carousel-reblog-submit" value="Reblog Post">
+				<input type="hidden" id="carousel-reblog-blog-id" value="4779443">
+				<input type="hidden" id="carousel-reblog-blog-url" value="https://hackaday.com">
+				<input type="hidden" id="carousel-reblog-blog-title" value="Hackaday">
+				<input type="hidden" id="carousel-reblog-post-url" value="">
+				<input type="hidden" id="carousel-reblog-post-title" value="">
+			</div>
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="0918b440bc"><input type="hidden" name="_wp_http_referer" value="/2017/03/08/dont-fear-the-filter-lowpass-edition/">		</form>
+
+		<div class="arrow"></div>
+	</div>
+<link rel="stylesheet" id="all-css-0-3" href="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/jetpack-carousel.css" type="text/css" media="all">
+<!--[if lte IE 8]>
+<link rel='stylesheet' id='jetpack-carousel-ie8fix-css'  href='https://s1.wp.com/wp-content/mu-plugins/carousel/jetpack-carousel-ie8fix.css?m=1412618825h&#038;ver=20121024' type='text/css' media='all' />
+<![endif]-->
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpcomVipAnalytics = {"is_404":"0","is_home":"0","is_single":"1","is_front_page":"0","is_archive":"0","percentToTrack":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"https:\/\/hackaday.com\/wp-admin\/admin-ajax.php","nonce":"4990aa3df0","display_exif":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/hackadaycom.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Fhackaday.com%2F2017%2F03%2F08%2Fdont-fear-the-filter-lowpass-edition%2F","blog_id":"4779443","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"],"local_comments_commenting_as":"<fieldset><label for=\"email\">Email (Required)<\/label> <input type=\"text\" name=\"email\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-email-field\" \/><\/fieldset><fieldset><label for=\"author\">Name (Required)<\/label> <input type=\"text\" name=\"author\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-author-field\" \/><\/fieldset><fieldset><label for=\"url\">Website<\/label> <input type=\"text\" name=\"url\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-url-field\" \/><\/fieldset>","reblog":"Reblog","reblogged":"Reblogged","reblog_add_thoughts":"Add your thoughts here... (optional)","reblogging":"Reblogging...","post_reblog":"Post Reblog","stats_query_args":"blog=4779443&v=wpcom&tz=-8&user_id=0&subd=hackadaycom","is_public":"1","reblog_enabled":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/a.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script><script src="Don%E2%80%99t%20Fear%20the%20Filter%20%20Lowpass%20Edition%20%20%20Hackaday_files/w.js" type="text/javascript" async="" defer="defer"></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'4779443','blog_tz':'-8','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+_stq.push(['view', {'blog':'4779443','v':'wpcom','tz':'-8','user_id':'0','post':'245541','subd':'hackadaycom'}]);
+function st_vt() {var x=document.createElement("img");x.src="https://pixel.wp.com/g.gif?blog=4779443&v=wpcomvt&tz=-8&user_id=0&post=245541&subd=hackadaycom&rand="+Math.random();}
+_stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1BNmNJfGhxNCVxUDExYmtib2E/SzdEJm0lUEtbdFU0fFk4cHZvcUFrZT90Tn4yQm1+R3NyNTdkRXFNdWdRL28yNk8rbmNjbWVqU35PYUcuJnlOQ3EmcVpVVis9T2dqY0YufFVNQVt3eEFCL2QyMzMmS0xiSTMmR1YrW1B+bjYuPXRHPXdNRHBbW3lDQ1QtZUlzJi56eUtjYmp0R0E4X1plemU2T3puUHFUZUd2cCZ2SWNkL2ZKQWZ8W0EzMUxEJk9BZmxFVyZYV2RNb3ptTj0wbDAmRlMzcllZLU8tby04Z1VvNzFfY3ZyRCZxaTFELVFPeXNNcnpXRm9NVVV8bUljam9mVENQYU93SD9zNjAscHwsR1ZtNUh2dC1HW3dqaktGYUlHfmRyVXdI'}]);
+_stq.push([ 'clickTrackerInit', '4779443', '245541' ]);
+	</script>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+
+
+</body></html>

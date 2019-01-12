@@ -13,7 +13,7 @@ PubSubClient client(espClient);
 
 //======== Global Variables ========//
 int temp_refresh_rate = 20000 ; // HTU21D Refreshrate (Send Data to RPI every N secs)
-int light_refresh_rate = 100 ; // LDR's Refreshrate (Send Data to RPI every N secs)
+int light_refresh_rate = 350 ; // LDR's Refreshrate (Send Data to RPI every N secs)
 const int led = LED_BUILTIN; // Feedback LED
 String serialdata="" ;
 boolean stringComplete = false;  // whether the string is complete
@@ -83,12 +83,31 @@ void loop() {
       sscanf(str_array, "<%d,%d,%d,%d>", &ldr_1, &ldr_2, &ldr_3, &ldr_4);
       //Serial.printf("\nA:%d | B:%d | C:%d | D:%d |",ldr_1,ldr_2,ldr_3,ldr_4);
 
-      // Sensor Calibration (Convert to Lux), acording to Excel 
-      lux_a=1000/3*log(20*ldr_1/2403);
-      lux_b=10000/31*log(100*ldr_2/17327);
-      lux_c=10000/71*log(5000*ldr_3/14473);
-      lux_d=1250/7*log(1000*ldr_2/14587);
+      //==== Sensor Calibration (Convert to Lux), acording to Excel ====//
+
+      // Pelo Wolfram, valores lumens da lampada
+      //lux_a=1000/3*log(20*ldr_1/2403); // Im dumb sorry
+      //lux_b=10000/31*log(100*ldr_2/17327);
+      //lux_c=10000/71*log(5000*ldr_3/14473);
+      //lux_d=1250/7*log(1000*ldr_2/14587);
+
+      // Pelo Matlab com valores da lampada
+      lux_a=exp((100*ldr_1)/45543 + 1198/893);
+      lux_b=exp((100*ldr_2)/71513 + 97496/71513);
+      lux_c=exp((25*ldr_3)/17383 + 55805/34766);
+      lux_d=exp((100*ldr_4)/72627 + 115390/72627);
       
+      // Pelo Wolfram com valores do telmovel
+      //lux_a=exp((100*ldr_1+69571)/31248);
+      //lux_b=exp((100*ldr_2+73659)/50493);
+      //lux_c=exp((10*ldr_3+16597)/5254);
+      //lux_d=exp((5*(10*ldr_4+19032))/29817);
+      
+      // Pelo Matlab com Valores do Telemovel
+//      lux_a=exp((25*ldr_1)/7812+69571/31248); 
+//      lux_b=exp((100*ldr_2)/50493 + 24553/16831);
+//      lux_c=exp((5*ldr_3)/2627 + 16597/5254);
+//      lux_d=exp((50*ldr_4)/29817 + 31705/9939);
       // clear the string:
       serialdata = "";
       stringComplete = false;
